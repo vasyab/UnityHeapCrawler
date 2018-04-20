@@ -1,0 +1,24 @@
+Sample.Unit [managed 160 bytes] root paths:
+Game.Instance [Game].player
+Game.Instance [Game].allUnits._items.
+TypeStats.Data.entries..value.Instances.entries..key
+TypeStats.Data.entries..value.Instances.entries..value.Instance
+
+Sample.Unit [managed 56 bytes] root paths:
+Game.Instance [Game].player.Pet
+Game.Instance [Game].allUnits._items.
+TypeStats.Data.entries..value.Instances.entries..key
+TypeStats.Data.entries..value.Instances.entries..value.Instance
+
+Sample.Unit [managed 56 bytes] root paths:
+Game.Instance [Game].allUnits._items.
+Game.Enemies.Units.
+TypeStats.Data.entries..value.Instances.entries..key
+TypeStats.Data.entries..value.Instances.entries..value.Instance
+
+Sample.Unit [managed 56 bytes] root paths:
+Game.Instance [Game].allUnits._items.
+Game.Enemies.Units.
+TypeStats.Data.entries..value.Instances.entries..key
+TypeStats.Data.entries..value.Instances.entries..value.Instance
+

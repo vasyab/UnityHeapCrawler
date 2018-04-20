@@ -1,0 +1,2 @@
+UnityDefault2DArray (UnityEngine.Texture2DArray) [native 4 bytes, managed 24 bytes] root paths:
+

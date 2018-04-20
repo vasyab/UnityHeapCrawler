@@ -1,0 +1,4 @@
+UnityDitherMask3D (UnityEngine.Texture3D) [native 256 bytes, managed 24 bytes] root paths:
+
+UnityDefault3D (UnityEngine.Texture3D) [native 4 bytes, managed 24 bytes] root paths:
+

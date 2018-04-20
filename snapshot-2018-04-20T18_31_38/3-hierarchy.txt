@@ -1,0 +1,44 @@
+HandlesGO [GameObject] 456 bytes
+  Cone [GameObject] 96 bytes
+    [Transform] 24 bytes
+    [MeshFilter] 24 bytes
+    [MeshRenderer] 24 bytes
+  Cube [GameObject] 96 bytes
+    [Transform] 24 bytes
+    [MeshFilter] 24 bytes
+    [MeshRenderer] 24 bytes
+  Cylinder [GameObject] 96 bytes
+    [Transform] 24 bytes
+    [MeshFilter] 24 bytes
+    [MeshRenderer] 24 bytes
+  Sphere [GameObject] 96 bytes
+    [Transform] 24 bytes
+    [MeshFilter] 24 bytes
+    [MeshRenderer] 24 bytes
+  [Transform] 24 bytes
+  [Animation] 24 bytes
+Main Camera [GameObject] 144 bytes
+  [Transform] 24 bytes
+  [Camera] 24 bytes
+  [GUILayer] 24 bytes
+  [FlareLayer] 24 bytes
+  [AudioListener] 24 bytes
+SceneCamera [GameObject] 120 bytes
+  [Transform] 24 bytes
+  [Camera] 24 bytes
+  [FlareLayer] 24 bytes
+  [Behaviour] 24 bytes
+SceneLight [GameObject] 72 bytes
+  [Transform] 24 bytes
+  [Light] 24 bytes
+SceneLight [GameObject] 72 bytes
+  [Transform] 24 bytes
+  [Light] 24 bytes
+SceneLight [GameObject] 72 bytes
+  [Transform] 24 bytes
+  [Light] 24 bytes
+Directional Light [GameObject] 72 bytes
+  [Transform] 24 bytes
+  [Light] 24 bytes
+InternalIdentityTransform [GameObject] 48 bytes
+  [Transform] 24 bytes

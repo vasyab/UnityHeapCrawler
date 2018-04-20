@@ -1,0 +1,10 @@
+Game.Instance [Game] [Game] 384 bytes
+  allUnits [List`1<Unit>] 184 bytes
+    _items [Unit[]] 144 bytes
+      [Unit] 56 bytes
+      [Unit] 56 bytes
+  player [Unit] 160 bytes
+    Pet [Unit] 56 bytes
+    Name [String] 48 bytes
+Game.Enemies [UnitsGroup] 40 bytes
+  Units [Unit[]] 16 bytes

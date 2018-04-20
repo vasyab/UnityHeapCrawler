@@ -1,0 +1,11 @@
+.vs
+Library
+*.sln
+*.sln.DotSettings.user
+*.userprefs
+*.suo
+Temp
+obj
+*.csproj
+.idea
+*.iml

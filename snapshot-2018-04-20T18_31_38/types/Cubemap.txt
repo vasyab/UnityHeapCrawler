@@ -1,0 +1,6 @@
+ (UnityEngine.Cubemap) [native 256.8 KB, managed 24 bytes] root paths:
+
+UnityBlackCube (UnityEngine.Cubemap) [native 532 bytes, managed 24 bytes] root paths:
+
+UnityDefaultCube (UnityEngine.Cubemap) [native 532 bytes, managed 24 bytes] root paths:
+

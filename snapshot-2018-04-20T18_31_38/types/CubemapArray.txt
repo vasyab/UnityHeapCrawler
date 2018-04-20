@@ -1,0 +1,2 @@
+UnityDefaultCubeArray (UnityEngine.CubemapArray) [native 24 bytes, managed 24 bytes] root paths:
+

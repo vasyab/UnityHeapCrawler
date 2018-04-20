@@ -1,0 +1,208 @@
+TypeStats.Data [Dictionary`2<Type, TypeStats>] 1.15 MB
+  entries [Entry[]] 1.13 MB
+  buckets [Int32[]] 15.8 KB
+TypeData.seenTypeData [Dictionary`2<Type, TypeData>] 554.4 KB
+  entries [Entry[]] 538.5 KB
+  buckets [Int32[]] 15.8 KB
+Keywords.keywords [LookupTable] 545.5 KB
+  root [Node] 545.4 KB
+GUI.s_Skin [GUISkin] 334.0 KB
+  m_CustomStyles [GUIStyle[]] 261.3 KB
+  m_Styles [Dictionary`2<String, GUIStyle>] 61.9 KB
+  ...
+Keywords.keywords [LookupTable] 285.5 KB
+  root [Node] 285.5 KB
+EditorGUIUtility.s_GUIContents [Hashtable] 239.4 KB
+  buckets [bucket[]] 239.3 KB
+XmlSerializable.serializerCache [Dictionary`2<Type, XmlSerializer>] 154.3 KB
+  entries [Entry[]] 154.2 KB
+  ...
+EditorCompilationInterface.editorCompilation [EditorCompilation] 104.8 KB
+  customTargetAssemblies [TargetAssembly[]] 41.0 KB
+  packageCustomScriptAssemblies [CustomScriptAssembly[]] 19.3 KB
+  unityAssemblies [PrecompiledAssembly[]] 14.1 KB
+  allScripts [HashSet`1<String>] 13.1 KB
+  precompiledAssemblies [PrecompiledAssembly[]] 7.76 KB
+  m_PackageAssemblies [PackageAssembly[]] 7.38 KB
+  customScriptAssemblies [CustomScriptAssembly[]] 1.68 KB
+  ...
+ProjectBrowser.s_LastInteractedProjectBrowser [ProjectBrowser] 60.3 KB
+  m_AssetLabels [InputData] 30.1 KB
+  m_ListArea [ObjectListArea] 22.1 KB
+  m_FolderTree [TreeViewController] 2.63 KB
+  m_ObjectTypes [InputData] 2.30 KB
+  ...
+CustomEditorAttributes.kSCustomEditors [Dictionary`2<Type, List`1>] 57.4 KB
+  entries [Entry[]] 55.6 KB
+  buckets [Int32[]] 1.68 KB
+UnityType.ms_types [UnityType[]] 49.9 KB
+UIElementsUtility.s_UIElementsCache [Dictionary`2<Int32, Panel>] 49.5 KB
+  entries [Entry[]] 49.4 KB
+  ...
+Parser.set [Boolean[,]] 38.5 KB
+NetworkWriter.s_StringWriteBuffer [Byte[]] 32.0 KB
+Parser.set [Boolean[,]] 23.0 KB
+EditorGUIUtility.s_TextGUIContents [Hashtable] 22.6 KB
+  buckets [bucket[]] 22.6 KB
+EditorAssemblies.<loadedAssemblies>k__BackingField [Assembly[]] 22.4 KB
+TypeData.seenTypeDataNested [Dictionary`2<Type, TypeData>] 21.6 KB
+  entries [Entry[]] 20.8 KB
+  ...
+EditorGUIUtility.s_IconGUIContents [Hashtable] 20.9 KB
+  buckets [bucket[]] 20.8 KB
+PackageManager.instance [PackageManager] 20.8 KB
+  <LocalIndexer>k__BackingField [LocalIndexer] 17.8 KB
+  database [Database] 1.77 KB
+  moduleInfo [IvyModule] 1.02 KB
+  ...
+MixerEffectDefinitions.s_MixerEffectDefinitions [List`1<MixerEffectDefinition>] 18.7 KB
+  _items [MixerEffectDefinition[]] 18.6 KB
+CustomEditorAttributes.kSCustomMultiEditors [Dictionary`2<Type, List`1>] 16.4 KB
+  entries [Entry[]] 15.5 KB
+  ...
+UnityScriptLexer.tokenSet_1_ [BitSet] 16.0 KB
+  dataBits [Int64[]] 16.0 KB
+UnityScriptLexer.tokenSet_2_ [BitSet] 16.0 KB
+  dataBits [Int64[]] 16.0 KB
+UnityScriptLexer.tokenSet_3_ [BitSet] 16.0 KB
+  dataBits [Int64[]] 16.0 KB
+UnityScriptLexer.tokenSet_4_ [BitSet] 16.0 KB
+  dataBits [Int64[]] 16.0 KB
+UnityScriptLexer.tokenSet_5_ [BitSet] 16.0 KB
+  dataBits [Int64[]] 16.0 KB
+UnityScriptLexer.tokenSet_6_ [BitSet] 16.0 KB
+  dataBits [Int64[]] 16.0 KB
+UnityScriptLexer.tokenSet_7_ [BitSet] 16.0 KB
+  dataBits [Int64[]] 16.0 KB
+AssetStoreContext.s_StandardPackageRegExp [Regex] 14.2 KB
+  code [RegexCode] 13.4 KB
+  ...
+LocalizedEditorFontManager.m_fontDictionaries [Dictionary`2<SystemLanguage, FontDictionary>] 13.4 KB
+  entries [Entry[]] 13.3 KB
+  ...
+UnityType.ms_nameToType [Dictionary`2<String, UnityType>] 11.9 KB
+  entries [Entry[]] 10.1 KB
+  buckets [Int32[]] 1.68 KB
+SceneHierarchyWindow.s_LastInteractedHierarchy [SceneHierarchyWindow] 11.6 KB
+  m_TreeView [TreeViewController] 10.1 KB
+  ...
+OpCodeNames.names [String[]] 10.9 KB
+UnityType.ms_idToType [Dictionary`2<Int32, UnityType>] 10.2 KB
+  entries [Entry[]] 8.42 KB
+  buckets [Int32[]] 1.68 KB
+XmlSerializable.attributeMappings [Dictionary`2<String, KeyValuePair`2>] 9.29 KB
+  entries [Entry[]] 9.07 KB
+  ...
+Tokens.tokenList [String[]] 9.04 KB
+UIElementsDebugger.k_FieldInfos [PropertyInfo[]] 8.89 KB
+Keywords.keywordList [String[]] 8.41 KB
+TextWriter.Null [NullTextWriter] 8.24 KB
+  InternalFormatProvider [CultureInfo] 8.21 KB
+  ...
+UnityScriptLexer.tokenSet_0_ [BitSet] 8.03 KB
+  dataBits [Int64[]] 8.01 KB
+Rigidbody2DEditor.m_Contacts [ContactPoint2D[]] 5.47 KB
+Collider2DEditorBase.m_Contacts [ContactPoint2D[]] 5.47 KB
+StyleSheetCache.s_NameToIDCache [Dictionary`2<String, StylePropertyID>] 5.30 KB
+  entries [Entry[]] 4.87 KB
+  ...
+UnityScriptParser.tokenNames_ [String[]] 5.23 KB
+Factories.s_Factories [Dictionary`2<String, Func`3>] 4.82 KB
+  entries [Entry[]] 4.59 KB
+  ...
+GUILayoutUtility.s_StoredLayouts [Dictionary`2<Int32, LayoutCache>] 4.77 KB
+  entries [Entry[]] 4.64 KB
+  ...
+ScriptableSingleton`1<GameViewSizes>.s_Instance [GameViewSizes] 4.54 KB
+  m_Android [GameViewSizeGroup] 1.66 KB
+  m_iOS [GameViewSizeGroup] 1.20 KB
+  ...
+TestContext.Error [EventListenerTextWriter] 4.28 KB
+  _defaultWriter [SyncTextWriter] 4.24 KB
+  ...
+Event.<>f__switch$map0 [Dictionary`2<String, Int32>] 3.16 KB
+  entries [Entry[]] 2.83 KB
+  ...
+AvatarSetupTool.sBonePoses [BonePoseData[]] 3.15 KB
+EditorBuildRules.predefinedTargetAssemblies [TargetAssembly[]] 3.09 KB
+BigInteger.smallPrimes [UInt32[]] 3.06 KB
+Keywords.keywordList [String[]] 2.96 KB
+AvatarBipedMapper.s_BipedBones [BipedBone[]] 2.92 KB
+VSCodeTemplates.SettingsJson [String] 2.66 KB
+AudioMixerWindow.s_Instance [AudioMixerWindow] 2.53 KB
+BuildPlatforms.s_Instance [BuildPlatforms] 2.31 KB
+  buildPlatforms [BuildPlatform[]] 2.29 KB
+StyleContext.styleContextHierarchyTraversal [StyleContextHierarchyTraversal] 2.25 KB
+  m_ruleMatchers [List`1<RuleMatcher>] 1.85 KB
+  ...
+MsgType.msgLabels [String[]] 2.15 KB
+JSProxyMgr.s_Instance [JSProxyMgr] 2.07 KB
+  m_GlobalObjects [Dictionary`2<String, Object>] 2.00 KB
+  ...
+Styles.sBuiltinCameraModes [CameraMode[]] 2.00 KB
+Settings.m_Prefs [SortedList`2<String, Object>] 1.98 KB
+  keys [String[]] 1.64 KB
+  ...
+AdditionalTypeExtensions.convertibleValueTypes [Dictionary`2<Type, List`1>] 1.92 KB
+  entries [Entry[]] 1.77 KB
+  ...
+BuildPlayerWindow.s_VersionPattern [Regex] 1.91 KB
+CSSSpec.rgx [Regex] 1.90 KB
+EditorGUI.s_NonObsoleteEnumData [Dictionary`2<Type, EnumData>] 1.85 KB
+  entries [Entry[]] 1.74 KB
+  ...
+MonoCSharpCompilerOutputParser.sCompilerOutput [Regex] 1.82 KB
+ScriptableSingleton`1<SavedSearchFilters>.s_Instance [SavedSearchFilters] 1.80 KB
+  m_SavedFilters [List`1<SavedFilter>] 1.73 KB
+  ...
+MonoCSharpCompilerOutputParser.sInternalErrorCompilerOutput [Regex] 1.80 KB
+Settings.m_AddedPrefs [List`1<IPrefType>] 1.77 KB
+  _items [IPrefType[]] 1.73 KB
+MicrosoftCSharpCompilerOutputParser.sCompilerOutput [Regex] 1.77 KB
+OpCodes.OneByteOpCode [OpCode[]] 1.76 KB
+XmlSerializable.typeMappings [Dictionary`2<String, Type>] 1.75 KB
+  entries [Entry[]] 1.60 KB
+  ...
+APIUpdaterRuntimeServices.ComponentsFromUnityEngine [List`1<Type>] 1.74 KB
+  _items [Type[]] 1.70 KB
+BooCompilerOutputParser.sCompilerOutput [Regex] 1.73 KB
+CompilerParameters.SharedTypeSystemProvider [ReflectionTypeSystemProvider] 1.72 KB
+  _referenceCache [MemoizedFunction`2<Assembly, AssemblyReference>] 1.70 KB
+SolutionSynchronizer.scriptReferenceExpression [Regex] 1.72 KB
+  code [RegexCode] 1.06 KB
+  ...
+AvatarControl.s_BonePositions [Vector2[,]] 1.72 KB
+SemVersion.parseEx [Regex] 1.68 KB
+FrameDebuggerWindow.s_FrameEventTypeNames [String[]] 1.60 KB
+Native.s_MeasureFunctions [LockDictionary`2<IntPtr, WeakReference>] 1.57 KB
+  _cacheItemDictionary [Dictionary`2<IntPtr, WeakReference>] 1.51 KB
+  ...
+Tokens.tokenList [String[]] 1.52 KB
+UnityScriptCompilerOutputParser.sCompilerOutput [Regex] 1.50 KB
+TypeReference.types [Dictionary`2<String, String>] 1.39 KB
+  entries [Entry[]] 1.25 KB
+  ...
+EditorStyles.s_Current [EditorStyles] 1.38 KB
+AnalyticsEvent.enumRenameTable [Dictionary`2<String, String>] 1.33 KB
+  entries [Entry[]] 1.19 KB
+  ...
+StackFilter.assertOrAssumeRegex [Regex] 1.32 KB
+  code [RegexCode] 1.04 KB
+  ...
+CustomScriptAssembly.<Platforms>k__BackingField [CustomScriptAssemblyPlatform[]] 1.26 KB
+Styles.bbModeText [GUIContent] 1.20 KB
+  m_Tooltip [String] 1.09 KB
+  ...
+UnityScriptCompiler.UnityEditorPattern [Regex] 1.13 KB
+Styles.backFaceToleranceContent [GUIContent] 1.09 KB
+Styles.resolutionContent [GUIContent] 1.09 KB
+  m_Tooltip [String] 1.01 KB
+  ...
+Styles.boxProjectionText [GUIContent] 1.07 KB
+AssetStoreContext.s_GeneratedIDRegExp [Regex] 1.07 KB
+Il2CppOutputParser.sErrorRegexWithSourceInformation [Regex] 1.06 KB
+AvatarAutoMapper.s_MappingDataBody [BoneMappingItem[]] 1.05 KB
+CSharpLanguage._lfOnlyRegex [Regex] 1.04 KB
+CSharpLanguage._crOnlyRegex [Regex] 1.04 KB
+CommandLineFormatter.Quotes [Regex] 1.01 KB
+UnityConnectServiceCollection.s_UnityConnectEditor [UnityConnectServiceCollection] 1.00 KB
