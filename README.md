@@ -4,7 +4,7 @@ Customizable heap snapshotting tool for Unity game engine. Can be used to detect
 
 ## Features
 1. Reflection-based
-2. Results are plain text (see [output overview](snapshot-2018-04-20T18_31_38/))
+2. Results are plain text (see [output example](snapshot-2018-04-20T18_31_38/))
 3. Human readable results (objects are traversed using [BFS](https://en.wikipedia.org/wiki/Breadth-first_search))
 4. Little memory overhead - most crawling data is discared after aggregation
 5. Highly customizable - choose between fullness and low memory usage (see [documentation](https://vasyab.github.io/UnityHeapCrawler_Docs/class_unity_heap_crawler_1_1_heap_snapshot_collector.html))
