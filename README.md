@@ -20,6 +20,10 @@ When heap consumption and memory leaks became problems in our project I could no
 
 Current solution relies heavily on ideas and memory estimation code from previous reflection based crawlers - my collegue's [UnityHeapEx](https://github.com/Cotoff/UnityHeapEx) and [UnityHeapDump](https://github.com/Zuntatos/UnityHeapDump) by [Zuntatos](https://github.com/Zuntatos). I could not use them as is due high memory consumption (all references data won't fit in memory) and low results readability.
 
+## Usage
+Create `HeapSnapshotCollector` class instance and call `Start()` after setting it up. See [usage example](Assets/Sample/SampleMemorySnapshot.cs) for options overview. Check out
+[documentation](https://vasyab.github.io/UnityHeapCrawler_Docs/class_unity_heap_crawler_1_1_heap_snapshot_collector.html) for more detailed options description.
+
 ## Issues
 * Static fields in generic types and not detected. User can supply those Type objects manually
 * Type memory usage is an estimation and can be slightly off
