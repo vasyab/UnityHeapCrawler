@@ -1,0 +1,21 @@
+HierarchyObject [HierarchyObject: GameObject (-26450)] 1.54 KB
+  Child1 [Child1: GameObject (-27044)] 1.54 KB
+    SpriteHolder3 (new) [SpriteHolder3: GameObject (-1138112)] 1.15 KB
+      Image (new) [SpriteHolder3: Image (-1138114)] 1.08 KB
+        m_OnCullStateChanged (new) [CullStateChangedEvent] 528 bytes
+          m_TypeName (new) [String] 272 bytes
+          m_Calls (new) [InvokableCallList] 168 bytes
+            m_PersistentCalls (new) [List`1<BaseInvokableCall>] 40 bytes
+            m_RuntimeCalls (new) [List`1<BaseInvokableCall>] 40 bytes
+            m_ExecutingCalls (new) [List`1<BaseInvokableCall>] 40 bytes
+          m_PersistentCalls (new) [PersistentCallGroup] 64 bytes
+            m_Calls (new) [List`1<PersistentCall>] 40 bytes
+        m_Material (new) (destroyed Unity Object) [Material] 400 bytes
+        m_ColorTweenRunner (new) [TweenRunner`1<ColorTween>] 32 bytes
+        m_Sprite (new) [NewSprite_Diamond: Sprite (11410)] 24 bytes
+        ...
+      CanvasRenderer (new) [SpriteHolder3: CanvasRenderer (-1138118)] 24 bytes
+      RectTransform (new) [SpriteHolder3: RectTransform (-1138116)] 24 bytes
+    SpriteHolder2 [SpriteHolder2: GameObject (-31872)] 400 bytes
+      Image [SpriteHolder2: Image (-34204)] 400 bytes
+        m_Material (new) (destroyed Unity Object) [Material] 400 bytes

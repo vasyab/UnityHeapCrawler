@@ -1,0 +1,137 @@
+        Size        Count    Type
+     2.97 MB          404    Node
+     2.95 MB          404    Node[]
+    854.1 KB        10793    String
+    680.2 KB         1385    GUIStyle
+    590.7 KB            5    GUIStyle[]
+    504.5 KB        10011    GUIStyleState
+    267.3 KB           50    Hashtable
+    263.4 KB         2613    bucket
+    245.4 KB         1664    GUIContent
+    194.9 KB           26    ChartSeriesViewData[]
+    193.7 KB           79    ChartSeriesViewData
+    192.9 KB        49389    Single
+    138.3 KB            5    AssemblyBuilder
+    133.1 KB            5    ModuleBuilder
+    123.3 KB           69    BitSet
+    122.3 KB        15652    Int64
+    116.1 KB         1875    Entry<String, GUIStyle>
+     92.8 KB          463    String[]
+     71.1 KB          628    Entry<Type, List`1>
+     63.0 KB        16133    Boolean
+     59.4 KB           15    VisualElement
+     55.6 KB         2372    Texture2D
+     55.4 KB           30    TypeBuilder
+     55.0 KB         2664    Entry<String, Int32>
+     53.9 KB           78    GUILayoutGroup
+     53.8 KB        13763    Int32
+     49.9 KB            1    UnityType[]
+     47.6 KB          292    UnityType
+     47.0 KB          375    List`1<MonoEditorType>
+     46.5 KB           29    Regex
+     45.9 KB           84    List`1<GUILayoutEntry>
+     44.7 KB           13    TargetAssembly[]
+     43.5 KB           77    TargetAssembly
+     42.6 KB           40    GUILayoutEntry[]
+     37.0 KB        37874    Byte
+     36.9 KB           15    IMGUIContainer
+     36.0 KB          107    StyleRule
+     34.3 KB          116    StyleComplexSelector
+     32.8 KB          127    CustomScriptAssembly
+     32.7 KB          107    StyleProperty[]
+     32.4 KB          375    MonoEditorType[]
+     32.2 KB            2    ListElement[]
+     30.1 KB          332    StyleProperty
+     30.1 KB          239    ListElement
+     29.7 KB          116    StyleSelector[]
+     28.5 KB           29    RegexCode
+     28.1 KB          199    StyleSelector
+     27.7 KB          539    RuntimeType
+     26.0 KB           96    MethodBuilder
+     24.1 KB           68    Func`2<String, Int32>
+     22.5 KB           65    <CreateTargetAssemblies>c__AnonStorey1
+     22.1 KB           95    MonoAssembly
+     21.8 KB           89    PrecompiledAssembly
+     20.7 KB          221    MonoEditorType
+     20.3 KB          313    StyleSelectorPart
+     18.9 KB            9    BuiltinResource[]
+     18.1 KB        10012    Texture2D[]
+     17.7 KB           44    HashSet`1<String>
+     17.6 KB          165    BuiltinResource
+     17.4 KB            8    TreeViewItem[]
+     16.9 KB           73    MixerParameterDefinition
+     14.8 KB          631    MonoScript
+     14.4 KB          125    Slot<String>
+     14.2 KB           26    VisualElementStylesData
+     13.9 KB           50    Internal
+     13.8 KB           65    <CreateTargetAssemblies>c__AnonStorey2
+     12.3 KB           49    Entry<String, FontSetting>
+     10.9 KB          200    ContactPoint2D
+     10.3 KB          877    Vector3
+     10.1 KB          431    Entry<String, UnityType>
+     9.86 KB          189    PackageAssembly
+     9.50 KB           88    Object[]
+     9.27 KB           65    MonoProperty
+     8.42 KB          431    Entry<Int32, UnityType>
+     8.41 KB          115    GUIContent[]
+     8.10 KB           49    FontSetting
+     7.89 KB           29    IvyArtifact
+     7.86 KB           36    InvokableCallList
+     7.80 KB           58    PrefKey
+     7.09 KB           38    CSSNode
+     6.22 KB           65    MonoPropertyInfo
+     6.17 KB          108    List`1<BaseInvokableCall>
+     6.11 KB           83    List`1<Int32>
+     6.00 KB           96    GUILayoutEntry
+     5.98 KB           13    IvyInfo
+     5.60 KB           70    Contraction
+     5.28 KB          169    RectOffset
+     5.02 KB           12    TypeDesc
+     4.87 KB           89    Entry<String, StylePropertyID>
+     4.75 KB           28    PrefColor
+     4.66 KB           33    FieldBuilder
+     4.42 KB           95    Entry<String, String>
+     4.35 KB          557    Vector2
+     4.19 KB           36    Column
+     4.06 KB          208    LabelLayoutData
+     4.05 KB           51    ParameterBuilder
+     3.81 KB          244    Color
+     3.71 KB          475    OpCode
+     3.64 KB          931    UInt32
+     3.60 KB           77    List`1<TargetAssembly>
+     3.55 KB          156    Type[]
+     3.38 KB           39    GameViewSize
+     3.37 KB           25    PropertyBuilder
+     3.09 KB           28    PackageVersion
+     3.05 KB           17    RenameOverlay
+     3.00 KB          128    ScriptCompilerOptions
+     2.93 KB           50    BoneMappingItem
+     2.88 KB            3    DateTimeFormatInfo
+     2.79 KB           23    MonoField
+     2.72 KB           49    BonePoseData
+     2.63 KB          112    Mesh
+     2.59 KB          332    StyleValueHandle
+     2.53 KB           13    ChartViewData
+     2.45 KB           31    Object
+     2.40 KB           25    SplitterState
+     2.23 KB           22    RenderData
+     2.19 KB           20    ConstructorBuilder
+     2.15 KB           20    CustomAttributeBuilder
+     1.91 KB          244    Double
+     1.85 KB           79    WeakReference
+     1.81 KB          116    RuleMatcher
+     1.66 KB           28    BitArray
+     1.64 KB           36    List`1<PersistentCall>
+     1.57 KB           67    Func`3<BuildTarget, EditorScriptCompilationOptions, Boolean>
+     1.56 KB           48    Action
+     1.45 KB           62    PluginImporter
+     1.29 KB           55    Object
+     1.25 KB          321    KeyCode
+     1.25 KB           80    Rect
+     1.16 KB           74    Entry<BinaryOperatorType, Int32>
+     1.15 KB         1175    Char
+     1.13 KB           29    ExclusiveReference
+     1.09 KB           70    Vector4
+     1.07 KB           55    Entry<MemberInfo, Int32>
+     1.06 KB            8    StylePainter
+     1.05 KB           27    List`1<ScheduledItem>

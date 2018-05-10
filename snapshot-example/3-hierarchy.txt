@@ -1,0 +1,63 @@
+HierarchyObject [HierarchyObject: GameObject (-26450)] 2.72 KB
+  Child1 [Child1: GameObject (-27044)] 2.44 KB
+    SpriteHolder1 [SpriteHolder1: GameObject (-31716)] 1.20 KB
+      Image [SpriteHolder1: Image (-35358)] 1.13 KB
+        m_OnCullStateChanged [CullStateChangedEvent] 528 bytes
+          m_TypeName [String] 272 bytes
+          m_Calls [InvokableCallList] 168 bytes
+            m_PersistentCalls [List`1<BaseInvokableCall>] 40 bytes
+            m_RuntimeCalls [List`1<BaseInvokableCall>] 40 bytes
+            m_ExecutingCalls [List`1<BaseInvokableCall>] 40 bytes
+          m_PersistentCalls [PersistentCallGroup] 64 bytes
+            m_Calls [List`1<PersistentCall>] 40 bytes
+        m_Material (destroyed Unity Object) [Material] 400 bytes
+        m_Corners [Vector3[]] 48 bytes
+          [0] [Vector3] 12 bytes
+          [1] [Vector3] 12 bytes
+          [2] [Vector3] 12 bytes
+          [3] [Vector3] 12 bytes
+        m_ColorTweenRunner [TweenRunner`1<ColorTween>] 32 bytes
+        m_Sprite [UISprite: Sprite (848)] 24 bytes
+      CanvasRenderer [SpriteHolder1: CanvasRenderer (-35354)] 24 bytes
+      RectTransform [SpriteHolder1: RectTransform (-35356)] 24 bytes
+    SpriteHolder2 [SpriteHolder2: GameObject (-31872)] 1.20 KB
+      Image [SpriteHolder2: Image (-34204)] 1.13 KB
+        m_OnCullStateChanged [CullStateChangedEvent] 528 bytes
+          m_TypeName [String] 272 bytes
+          m_Calls [InvokableCallList] 168 bytes
+            m_PersistentCalls [List`1<BaseInvokableCall>] 40 bytes
+            m_RuntimeCalls [List`1<BaseInvokableCall>] 40 bytes
+            m_ExecutingCalls [List`1<BaseInvokableCall>] 40 bytes
+          m_PersistentCalls [PersistentCallGroup] 64 bytes
+            m_Calls [List`1<PersistentCall>] 40 bytes
+        m_Material (destroyed Unity Object) [Material] 400 bytes
+        m_Corners [Vector3[]] 48 bytes
+          [0] [Vector3] 12 bytes
+          [1] [Vector3] 12 bytes
+          [2] [Vector3] 12 bytes
+          [3] [Vector3] 12 bytes
+        m_ColorTweenRunner [TweenRunner`1<ColorTween>] 32 bytes
+        m_Sprite [Knob: Sprite (860)] 24 bytes
+      CanvasRenderer [SpriteHolder2: CanvasRenderer (-34200)] 24 bytes
+      RectTransform [SpriteHolder2: RectTransform (-34202)] 24 bytes
+    Transform [Child1: Transform (-27046)] 24 bytes
+  Child2 [Child2: GameObject (-27656)] 48 bytes
+    Transform [Child2: Transform (-27658)] 24 bytes
+  Child3 [Child3: GameObject (-27786)] 48 bytes
+    Transform [Child3: Transform (-27788)] 24 bytes
+  Child4 [Child4: GameObject (-27942)] 48 bytes
+    Transform [Child4: Transform (-27944)] 24 bytes
+  Child5 [Child5: GameObject (-28070)] 48 bytes
+    Transform [Child5: Transform (-28072)] 24 bytes
+  Child6 [Child6: GameObject (-28246)] 48 bytes
+    Transform [Child6: Transform (-28248)] 24 bytes
+  Transform [HierarchyObject: Transform (-26452)] 24 bytes
+Main Camera [Main Camera: GameObject (2948)] 144 bytes
+  Transform [Main Camera: Transform (2958)] 24 bytes
+  Camera [Main Camera: Camera (2956)] 24 bytes
+  GUILayer [Main Camera: GUILayer (2954)] 24 bytes
+  FlareLayer [Main Camera: FlareLayer (2952)] 24 bytes
+  AudioListener [Main Camera: AudioListener (2950)] 24 bytes
+Directional Light [Directional Light: GameObject (2942)] 72 bytes
+  Transform [Directional Light: Transform (2946)] 24 bytes
+  Light [Directional Light: Light (2944)] 24 bytes

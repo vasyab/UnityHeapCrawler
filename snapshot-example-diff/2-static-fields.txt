@@ -1,0 +1,32 @@
+UIElementsUtility.s_UIElementsCache [Dictionary`2<Int32, Panel>] 268.8 KB
+  entries [Entry[]] 268.8 KB
+EditorGUIUtility.s_GUIContents [Hashtable] 31.0 KB
+  buckets [bucket[]] 31.0 KB
+MixerEffectDefinitions.s_MixerEffectDefinitions [List`1<MixerEffectDefinition>] 14.2 KB
+  _items [MixerEffectDefinition[]] 14.2 KB
+AudioMixerWindow.s_Instance [: AudioMixerWindow (3020)] 4.02 KB
+  m_MixersTree (new) [AudioMixersTreeView] 1.53 KB
+  m_GroupTree (new) [AudioMixerGroupTreeView] 1.52 KB
+  ...
+ScriptAttributeUtility.s_DrawerTypeForType (new) [Dictionary`2<Type, DrawerKeySet>] 3.69 KB
+  entries (new) [Entry[]] 3.61 KB
+  ...
+ProjectBrowser.s_LastInteractedProjectBrowser [: ProjectBrowser (3030)] 2.86 KB
+  m_ListArea [ObjectListArea] 1.49 KB
+  ...
+TextureImporterInspector.s_TextureFormatStringsAndroid (new) [String[]] 2.86 KB
+GUILayoutUtility.s_StoredLayouts [Dictionary`2<Int32, LayoutCache>] 2.64 KB
+  entries [Entry[]] 2.64 KB
+TextureImporterInspector.s_TextureFormatStringsApplePVR (new) [String[]] 2.56 KB
+EditorGUIUtility.s_IconGUIContents [Hashtable] 2.10 KB
+  buckets [bucket[]] 2.10 KB
+TextureImporterInspector.s_TextureFormatStringsSwitch (new) [String[]] 2.10 KB
+AssetPostprocessingInternal.m_PostprocessorClasses (new) [ArrayList] 1.80 KB
+  _items (new) [Object[]] 1.77 KB
+SceneHierarchyWindow.s_LastInteractedHierarchy [: SceneHierarchyWindow (3032)] 1.46 KB
+  m_TreeView [TreeViewController] 1.42 KB
+  ...
+EditorGUI.s_NonObsoleteEnumData [Dictionary`2<Type, EnumData>] 1.09 KB
+  entries (new) [Entry[]] 1.09 KB
+  ...
+TextureImporterInspector.s_Styles (new) [Styles] 1.07 KB

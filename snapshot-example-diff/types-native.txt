@@ -1,0 +1,14 @@
+        Size        Count    Type
+    223.7 KB           56    Mesh
+     0 bytes          835    RectOffset
+     0 bytes          786    GUILayoutGroup
+     0 bytes          812    List`1<GUILayoutEntry>
+     0 bytes            7    Object[]
+     0 bytes          524    GUILayoutEntry[]
+     0 bytes           24    GUIScrollGroup
+     0 bytes         1236    GUILayoutEntry
+     0 bytes            8    GUIStyle
+     0 bytes          126    GUIContent
+     0 bytes          675    String
+     0 bytes           94    RuntimeType
+     0 bytes           36    String[]

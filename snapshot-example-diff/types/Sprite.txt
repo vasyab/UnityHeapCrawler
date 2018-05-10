@@ -1,0 +1,3 @@
+NewSprite_Diamond (UnityEngine.Sprite) [native 1.46 KB, managed 24 bytes] root paths:
+HierarchyObject.Child1.SpriteHolder3.Image.m_Sprite
+

@@ -1,0 +1,16 @@
+Sample.Unit [managed 160 bytes] root paths:
+Game.Instance [Game].player
+Game.Instance [Game].allUnits._items.[0]
+
+Sample.Unit [managed 56 bytes] root paths:
+Game.Instance [Game].player.Pet
+Game.Instance [Game].allUnits._items.[1]
+
+Sample.Unit [managed 56 bytes] root paths:
+Game.Instance [Game].allUnits._items.[2]
+Game.Enemies.Units.[0]
+
+Sample.Unit [managed 56 bytes] root paths:
+Game.Instance [Game].allUnits._items.[3]
+Game.Enemies.Units.[1]
+

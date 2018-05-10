@@ -1,74 +1,68 @@
         Size        Count    Type
-     1.54 MB        17429    String
+    854.1 KB        10793    String
     808.0 KB          404    Node[]
-    469.3 KB        10012    GUIStyleState
-    173.3 KB         1386    GUIStyle
-    155.3 KB         1988    Dictionary`2<Object, InstanceStats>
-    134.2 KB         2863    RuntimeType
-    124.3 KB         1988    TypeStats
+    469.3 KB        10011    GUIStyleState
+    192.9 KB        49389    Single
+    173.1 KB         1385    GUIStyle
     122.3 KB        15652    Int64
-    100.4 KB         1835    MonoField
-     99.5 KB         4246    Entry<Type, TypeData>
-     94.9 KB         4049    Entry<Type, TypeStats>
-     90.3 KB        23128    Int32
-     65.7 KB         2103    TypeData
-     65.4 KB         1673    GUIContent
-     64.3 KB         1695    String[]
-     63.0 KB        16118    Boolean
+     65.0 KB         1664    GUIContent
+     63.0 KB        16133    Boolean
+     55.6 KB         2372    Texture2D
+     53.8 KB        13763    Int32
      52.0 KB         2664    Entry<String, Int32>
-     51.8 KB         2209    Texture2D
      51.0 KB         2613    bucket
-     48.1 KB         1232    List`1<String>
-     47.7 KB         1221    InstanceStats
-     45.7 KB         1948    Entry<Object, InstanceStats>
      43.9 KB         1875    Entry<String, GUIStyle>
      37.0 KB        37874    Byte
-     32.0 KB          671    FieldInfo[]
-     25.4 KB          651    List`1<FieldInfo>
+     25.3 KB          539    RuntimeType
      18.8 KB           96    MethodBuilder
      18.3 KB          292    UnityType
+     16.3 KB          463    String[]
+     15.8 KB            8    TreeViewItem[]
      15.8 KB          404    Node
-     14.8 KB          630    MonoScript
+     14.8 KB          631    MonoScript
      14.7 KB          628    Entry<Type, List`1>
      14.6 KB          375    List`1<MonoEditorType>
-     12.6 KB           95    GUILayoutGroup
+     13.0 KB           26    VisualElementStylesData
      11.7 KB          375    MonoEditorType[]
      11.2 KB          239    ListElement
      10.9 KB          200    ContactPoint2D
      10.4 KB          332    StyleProperty
+     10.4 KB           78    GUILayoutGroup
      10.4 KB          221    MonoEditorType
+     10.3 KB          877    Vector3
      10.1 KB          431    Entry<String, UnityType>
-     10.0 KB           20    VisualElementStylesData
      9.92 KB          127    CustomScriptAssembly
-     9.59 KB        10013    Texture2D[]
+     9.59 KB        10012    Texture2D[]
      9.26 KB            5    GUIStyle[]
      8.42 KB          431    Entry<Int32, UnityType>
-     7.99 KB            6    TreeViewItem[]
      7.77 KB          199    StyleSelector
      6.11 KB          313    StyleSelectorPart
      6.09 KB           30    TypeBuilder
      6.02 KB           77    TargetAssembly
-     5.68 KB         1455    Single
-     5.19 KB          166    RectOffset
-     5.19 KB           83    GUILayoutEntry
+     6.00 KB           96    GUILayoutEntry
+     5.55 KB           79    ChartSeriesViewData
+     5.28 KB          169    RectOffset
      5.16 KB          165    BuiltinResource
      4.53 KB          116    StyleComplexSelector
      4.45 KB           95    MonoAssembly
-     3.92 KB          502    UInt64
+     4.35 KB          557    Vector2
+     4.22 KB          108    List`1<BaseInvokableCall>
+     4.06 KB          208    LabelLayoutData
      3.91 KB           50    Hashtable
-     3.87 KB           99    List`1<BaseInvokableCall>
      3.81 KB          244    Color
-     3.75 KB           96    List`1<GUILayoutEntry>
      3.71 KB          475    OpCode
      3.69 KB          189    PackageAssembly
      3.64 KB          931    UInt32
+     3.63 KB           15    VisualElement
+     3.63 KB           15    IMGUIContainer
      3.61 KB           33    FieldBuilder
      3.59 KB           51    ParameterBuilder
-     3.39 KB          117    GUIContent[]
      3.34 KB          107    StyleRule
+     3.30 KB          115    GUIContent[]
      3.28 KB           70    Contraction
+     3.28 KB           84    List`1<GUILayoutEntry>
+     3.24 KB           83    List`1<Int32>
      3.17 KB           58    PrefKey
-     3.15 KB           13    IMGUIContainer
      3.14 KB           73    MixerParameterDefinition
      3.13 KB           25    PropertyBuilder
      3.05 KB           65    MonoProperty
@@ -77,53 +71,55 @@
      2.95 KB           29    Regex
      2.93 KB           50    BoneMappingItem
      2.79 KB           65    MonoPropertyInfo
+     2.75 KB           44    HashSet`1<String>
      2.68 KB           49    BonePoseData
-     2.66 KB           11    VisualElement
      2.63 KB           28    PrefColor
+     2.63 KB          112    Mesh
      2.59 KB          107    StyleProperty[]
      2.59 KB          332    StyleValueHandle
-     2.56 KB           82    MonoTypeInfo
-     2.38 KB           38    HashSet`1<String>
-     2.30 KB           59    MonoCMethod
+     2.53 KB           36    Column
+     2.38 KB           38    CSSNode
      2.28 KB            1    UnityType[]
-     2.25 KB          288    Vector2
+     2.23 KB           22    RenderData
      2.23 KB           95    Entry<String, String>
      2.19 KB           20    ConstructorBuilder
      2.13 KB            2    ListElement[]
      2.04 KB           29    RegexCode
      2.04 KB           29    IvyArtifact
      2.03 KB           65    <CreateTargetAssemblies>c__AnonStorey1
-     2.00 KB           32    CSSNode
+     1.99 KB           17    RenameOverlay
+     1.95 KB          125    Slot<String>
+     1.92 KB           88    Object[]
      1.91 KB          244    Double
-     1.84 KB           84    Object[]
-     1.84 KB           42    GUILayoutEntry[]
+     1.85 KB           79    WeakReference
      1.83 KB           39    GameViewSize
+     1.81 KB           40    GUILayoutEntry[]
      1.81 KB          116    RuleMatcher
+     1.76 KB           25    SplitterState
      1.74 KB           89    Entry<String, StylePropertyID>
-     1.70 KB          145    Vector3
-     1.66 KB           71    WeakReference
-     1.64 KB          105    Slot<String>
-     1.63 KB           16    RenderData
+     1.69 KB           36    InvokableCallList
      1.62 KB           69    BitSet
      1.59 KB           68    Func`2<String, Int32>
      1.59 KB           12    TypeDesc
      1.57 KB           67    Func`3<BuildTarget, EditorScriptCompilationOptions, Boolean>
      1.56 KB           50    Internal
      1.55 KB          116    StyleSelector[]
-     1.55 KB           33    InvokableCallList
      1.52 KB           65    <CreateTargetAssemblies>c__AnonStorey2
      1.48 KB            5    AssemblyBuilder
      1.45 KB           62    PluginImporter
      1.42 KB           13    IvyInfo
+     1.41 KB           36    List`1<PersistentCall>
      1.41 KB           20    CustomAttributeBuilder
      1.39 KB           89    PrecompiledAssembly
+     1.35 KB          156    Type[]
      1.31 KB           28    PackageVersion
-     1.30 KB          155    Type[]
      1.29 KB           55    Object
      1.29 KB            9    BuiltinResource[]
-     1.29 KB           33    List`1<PersistentCall>
+     1.26 KB           23    MonoField
      1.25 KB          321    KeyCode
      1.25 KB           80    Rect
+     1.23 KB           26    ChartSeriesViewData[]
+     1.21 KB           31    Object
      1.20 KB           13    TargetAssembly[]
      1.16 KB           74    Entry<BinaryOperatorType, Int32>
      1.15 KB           49    Entry<String, FontSetting>
@@ -132,7 +128,10 @@
      1.13 KB           29    ExclusiveReference
      1.13 KB            5    ModuleBuilder
      1.13 KB            3    DateTimeFormatInfo
+     1.13 KB           48    Action
+     1.12 KB           13    ChartViewData
+     1.09 KB           70    Vector4
      1.09 KB           28    BitArray
      1.07 KB           55    Entry<MemberInfo, Int32>
-     1.05 KB            9    RenameOverlay
-  1024 bytes            1    IPrefType[]
+     1.06 KB            8    StylePainter
+     1.05 KB           27    List`1<ScheduledItem>

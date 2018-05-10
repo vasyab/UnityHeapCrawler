@@ -1,0 +1,10 @@
+TempBuffer 343 1142x642 (UnityEngine.RenderTexture) [native 16.8 MB, managed 24 bytes] root paths:
+
+GameView RT (UnityEngine.RenderTexture) [native 5.59 MB, managed 24 bytes] root paths:
+GameView.s_LastFocusedGameView.m_TargetTexture
+
+Camera DepthTexture (UnityEngine.RenderTexture) [native 2.80 MB, managed 24 bytes] root paths:
+
+null [managed 456 bytes] root paths:
+.m_SceneTargetTexture
+

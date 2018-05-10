@@ -1,49 +1,55 @@
         Size        Count    Type
-     33.8 MB         2209    Texture2D
-    501.5 KB          630    MonoScript
+     46.7 MB         2372    Texture2D
+     4.49 MB           31    Object
+    790.2 KB          112    Mesh
+    465.5 KB          631    MonoScript
     439.7 KB           62    PluginImporter
-     0 bytes        17429    String
+     0 bytes        10793    String
      0 bytes         1175    Char
-     0 bytes        23128    Int32
+     0 bytes        13763    Int32
      0 bytes          244    Color
-     0 bytes         1455    Single
-     0 bytes        16118    Boolean
+     0 bytes        49389    Single
+     0 bytes        16133    Boolean
      0 bytes           55    Object
      0 bytes        37874    Byte
      0 bytes          321    KeyCode
-     0 bytes          145    Vector3
+     0 bytes          877    Vector3
      0 bytes            3    DateTimeFormatInfo
-     0 bytes         1695    String[]
+     0 bytes          463    String[]
      0 bytes           70    Contraction
-     0 bytes          288    Vector2
+     0 bytes          557    Vector2
+     0 bytes           70    Vector4
      0 bytes          244    Double
      0 bytes        15652    Int64
-     0 bytes          155    Type[]
-     0 bytes         2863    RuntimeType
+     0 bytes          156    Type[]
+     0 bytes          539    RuntimeType
      0 bytes         2664    Entry<String, Int32>
-     0 bytes         1386    GUIStyle
+     0 bytes         1385    GUIStyle
      0 bytes            5    GUIStyle[]
-     0 bytes        10012    GUIStyleState
-     0 bytes          166    RectOffset
-     0 bytes        10013    Texture2D[]
+     0 bytes        10011    GUIStyleState
+     0 bytes          169    RectOffset
+     0 bytes        10012    Texture2D[]
      0 bytes         1875    Entry<String, GUIStyle>
      0 bytes           80    Rect
-     0 bytes           84    Object[]
-     0 bytes           95    GUILayoutGroup
-     0 bytes           96    List`1<GUILayoutEntry>
-     0 bytes           42    GUILayoutEntry[]
-     0 bytes         1673    GUIContent
+     0 bytes           88    Object[]
+     0 bytes           78    GUILayoutGroup
+     0 bytes           84    List`1<GUILayoutEntry>
+     0 bytes           40    GUILayoutEntry[]
+     0 bytes           48    Action
+     0 bytes         1664    GUIContent
      0 bytes          931    UInt32
-     0 bytes           11    VisualElement
-     0 bytes           38    HashSet`1<String>
-     0 bytes           16    RenderData
-     0 bytes           32    CSSNode
-     0 bytes           20    VisualElementStylesData
-     0 bytes           13    IMGUIContainer
-     0 bytes           71    WeakReference
-     0 bytes         1232    List`1<String>
-     0 bytes           83    GUILayoutEntry
-     0 bytes          105    Slot<String>
+     0 bytes            8    StylePainter
+     0 bytes           15    VisualElement
+     0 bytes           44    HashSet`1<String>
+     0 bytes           22    RenderData
+     0 bytes           38    CSSNode
+     0 bytes           26    VisualElementStylesData
+     0 bytes           27    List`1<ScheduledItem>
+     0 bytes           15    IMGUIContainer
+     0 bytes           79    WeakReference
+     0 bytes           96    GUILayoutEntry
+     0 bytes           25    SplitterState
+     0 bytes          125    Slot<String>
      0 bytes          116    RuleMatcher
      0 bytes          116    StyleComplexSelector
      0 bytes          107    StyleRule
@@ -57,10 +63,8 @@
      0 bytes           29    ExclusiveReference
      0 bytes           29    RegexCode
      0 bytes           29    Regex
-     0 bytes           82    MonoTypeInfo
      0 bytes           73    MixerParameterDefinition
-     0 bytes          117    GUIContent[]
-     0 bytes          502    UInt64
+     0 bytes          115    GUIContent[]
      0 bytes         2613    bucket
      0 bytes           50    Hashtable
      0 bytes           28    PrefColor
@@ -74,16 +78,16 @@
      0 bytes          375    MonoEditorType[]
      0 bytes          221    MonoEditorType
      0 bytes           95    MonoAssembly
-     0 bytes            9    RenameOverlay
-     0 bytes           33    InvokableCallList
+     0 bytes           83    List`1<Int32>
+     0 bytes           17    RenameOverlay
+     0 bytes           36    InvokableCallList
      0 bytes            2    ListElement[]
      0 bytes            9    BuiltinResource[]
-     0 bytes           99    List`1<BaseInvokableCall>
-     0 bytes           33    List`1<PersistentCall>
+     0 bytes          108    List`1<BaseInvokableCall>
+     0 bytes           36    List`1<PersistentCall>
      0 bytes          239    ListElement
-     0 bytes            6    TreeViewItem[]
+     0 bytes            8    TreeViewItem[]
      0 bytes          165    BuiltinResource
-     0 bytes            1    IPrefType[]
      0 bytes           39    GameViewSize
      0 bytes           50    BoneMappingItem
      0 bytes           49    BonePoseData
@@ -104,17 +108,6 @@
      0 bytes            1    UnityType[]
      0 bytes          431    Entry<Int32, UnityType>
      0 bytes          431    Entry<String, UnityType>
-     0 bytes         4246    Entry<Type, TypeData>
-     0 bytes         2103    TypeData
-     0 bytes          651    List`1<FieldInfo>
-     0 bytes          671    FieldInfo[]
-     0 bytes           59    MonoCMethod
-     0 bytes         1835    MonoField
-     0 bytes         4049    Entry<Type, TypeStats>
-     0 bytes         1988    TypeStats
-     0 bytes         1988    Dictionary`2<Object, InstanceStats>
-     0 bytes         1948    Entry<Object, InstanceStats>
-     0 bytes         1221    InstanceStats
      0 bytes           13    IvyInfo
      0 bytes           28    PackageVersion
      0 bytes           29    IvyArtifact
@@ -124,6 +117,7 @@
      0 bytes          404    Node[]
      0 bytes           28    BitArray
      0 bytes           74    Entry<BinaryOperatorType, Int32>
+     0 bytes           23    MonoField
      0 bytes            5    AssemblyBuilder
      0 bytes            5    ModuleBuilder
      0 bytes           20    CustomAttributeBuilder
@@ -136,3 +130,8 @@
      0 bytes           33    FieldBuilder
      0 bytes           25    PropertyBuilder
      0 bytes           51    ParameterBuilder
+     0 bytes           13    ChartViewData
+     0 bytes           26    ChartSeriesViewData[]
+     0 bytes           79    ChartSeriesViewData
+     0 bytes           36    Column
+     0 bytes          208    LabelLayoutData

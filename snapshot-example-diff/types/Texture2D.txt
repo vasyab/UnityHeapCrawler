@@ -1,0 +1,9 @@
+AnimatorController Icon (UnityEngine.Texture2D) [native 43.1 KB, managed 24 bytes] root paths:
+
+d_VisibilityOn (UnityEngine.Texture2D) [native 2.47 KB, managed 24 bytes] root paths:
+AudioMixerWindow.s_Instance.m_GroupTree.m_TreeViewGUI.k_VisibleON
+
+ (UnityEngine.Texture2D) [native 2.47 KB, managed 24 bytes] root paths:
+
+NewSprite_Diamond (UnityEngine.Texture2D) [native 528 bytes, managed 24 bytes] root paths:
+

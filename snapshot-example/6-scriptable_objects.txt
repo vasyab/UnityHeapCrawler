@@ -1,0 +1,391 @@
+LightSkin [LightSkin: GUISkin (6540)] 401.4 KB
+  m_CustomStyles [GUIStyle[]] 328.6 KB
+  m_Styles [Dictionary`2<String, GUIStyle>] 60.7 KB
+    entries [Entry[]] 57.0 KB
+    buckets [Int32[]] 3.59 KB
+  ...
+[: ProfilerWindow (3018)] 240.9 KB
+  m_Charts [ProfilerChart[]] 218.3 KB
+    [12] [ProfilerChart] 25.7 KB
+      m_Series [ChartSeriesViewData[]] 24.6 KB
+        [9] [ChartSeriesViewData] 2.47 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [4] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [7] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [8] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [1] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [3] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [6] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [5] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      ...
+    [7] [ProfilerChart] 23.3 KB
+      m_Series [ChartSeriesViewData[]] 22.2 KB
+        [7] [ChartSeriesViewData] 2.47 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [8] [ChartSeriesViewData] 2.47 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [4] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [1] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [3] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [5] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [6] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      ...
+    [0] [ProfilerChart] 22.1 KB
+      m_Series [ChartSeriesViewData[]] 19.6 KB
+        [3] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [5] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [1] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [4] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [7] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [6] [ChartSeriesViewData] 2.43 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      m_StackedSampleSums [Single[]] 1.16 KB
+      ...
+    [3] [ProfilerChart] 21.9 KB
+      m_Series [ChartSeriesViewData[]] 17.2 KB
+        [5] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [1] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [3] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [4] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [6] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      m_LineDrawingPoints [Vector3[]] 3.49 KB
+      ...
+    [9] [ProfilerChart] 20.8 KB
+      m_Series [ChartSeriesViewData[]] 19.6 KB
+        [5] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [6] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [7] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [1] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [3] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [4] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      ...
+    [8] [ProfilerChart] 18.4 KB
+      m_Series [ChartSeriesViewData[]] 17.3 KB
+        [3] [ChartSeriesViewData] 2.47 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [1] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [4] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [5] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [6] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      ...
+    [6] [ProfilerChart] 18.3 KB
+      m_Series [ChartSeriesViewData[]] 17.2 KB
+        [1] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [4] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [5] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [3] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [6] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      ...
+    [1] [ProfilerChart] 18.3 KB
+      m_Series [ChartSeriesViewData[]] 17.2 KB
+        [3] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [4] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [1] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [5] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [6] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      ...
+    [2] [ProfilerChart] 14.4 KB
+      m_Series [ChartSeriesViewData[]] 9.81 KB
+        [1] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [3] [ChartSeriesViewData] 2.45 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.44 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      m_LineDrawingPoints [Vector3[]] 3.49 KB
+      ...
+    [5] [ProfilerChart] 10.9 KB
+      m_Series [ChartSeriesViewData[]] 9.88 KB
+        [1] [ChartSeriesViewData] 2.47 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [0] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [2] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+        [3] [ChartSeriesViewData] 2.46 KB
+          <xValues>k__BackingField [Single[]] 1.16 KB
+          <yValues>k__BackingField [Single[]] 1.16 KB
+          ...
+      ...
+    ...
+  m_CPUFrameDataHierarchyView [ProfilerFrameDataHierarchyView] 15.3 KB
+    m_TreeView [ProfilerFrameDataTreeView] 9.75 KB
+      m_Rows [List`1<TreeViewItem>] 7.85 KB
+        _items [TreeViewItem[]] 7.81 KB
+      m_TreeView [TreeViewController] 1.20 KB
+      ...
+    m_DetailedCallsView [ProfilerDetailedCallsView] 2.50 KB
+      m_CalleesTreeView [CallsTreeViewController] 1.07 KB
+      m_CallersTreeView [CallsTreeViewController] 1.07 KB
+      ...
+    m_MultiColumnHeaderState [MultiColumnHeaderState] 1.31 KB
+      m_Columns [Column[]] 1.19 KB
+      ...
+    m_DetailedObjectsView [ProfilerDetailedObjectsView] 1.11 KB
+    ...
+  m_GPUFrameDataHierarchyView [ProfilerFrameDataHierarchyView] 4.04 KB
+    m_DetailedCallsView [ProfilerDetailedCallsView] 2.33 KB
+      m_CalleesTreeView [CallsTreeViewController] 1.07 KB
+      m_CallersTreeView [CallsTreeViewController] 1.07 KB
+      ...
+    ...
+  ...
+DefaultCommon [DefaultCommon: StyleSheet (7346)] 45.4 KB
+  m_Rules [StyleRule[]] 27.7 KB
+    [2] [StyleRule] 1.70 KB
+      m_Properties [StyleProperty[]] 1.66 KB
+    [31] [StyleRule] 1.48 KB
+      m_Properties [StyleProperty[]] 1.45 KB
+    [30] [StyleRule] 1.48 KB
+      m_Properties [StyleProperty[]] 1.45 KB
+    [28] [StyleRule] 1.48 KB
+      m_Properties [StyleProperty[]] 1.45 KB
+    [33] [StyleRule] 1.08 KB
+      m_Properties [StyleProperty[]] 1.05 KB
+    [38] [StyleRule] 1.03 KB
+      m_Properties [StyleProperty[]] 1024 bytes
+    [41] [StyleRule] 1.03 KB
+      m_Properties [StyleProperty[]] 1024 bytes
+    [6] [StyleRule] 1.02 KB
+    [4] [StyleRule] 1.01 KB
+    ...
+  m_ComplexSelectors [StyleComplexSelector[]] 14.8 KB
+  strings [String[]] 1.80 KB
+  ...
+DefaultCommonDark [DefaultCommonDark: StyleSheet (7592)] 35.7 KB
+  m_ComplexSelectors [StyleComplexSelector[]] 20.1 KB
+  m_Rules [StyleRule[]] 9.02 KB
+  strings [String[]] 6.33 KB
+  ...
+[: SceneView (3026)] 16.9 KB
+  svRot [SceneViewRotation] 8.60 KB
+    dirNameVisible [AnimBool[]] 5.48 KB
+    dirVisible [AnimBool[]] 1.83 KB
+    ...
+  grid [SceneViewGrid] 1.84 KB
+  ...
+GameSkin [GameSkin: GUISkin (728)] 12.5 KB
+  m_Styles [Dictionary`2<String, GUIStyle>] 1.09 KB
+  ...
+[: AnimatorControllerTool (3022)] 11.3 KB
+  m_GraphUnderlayUI [IMGUIContainer] 1.49 KB
+  ...
+[: InspectorWindow (3028)] 1.23 KB
+[: Graph (-1558)] 1.17 KB
+[: Graph (-1562)] 1.15 KB

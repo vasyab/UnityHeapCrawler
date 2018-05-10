@@ -1,0 +1,13 @@
+Mono Size Min: 1.01 GB
+Mono Size Max: 1.18 GB
+Total Allocated: 86.5 MB
+Total Reserved: 258.5 MB
+
+User Roots size: 424 bytes
+Static Roots size: 2.85 MB
+Hierarchy size: 2.93 KB
+Animator Controllers size: 0 bytes
+Prefabs size: 1.27 KB
+Scriptable Objects size: 771.8 KB
+Unity Objects size: 51.6 KB
+Total size: 3.66 MB

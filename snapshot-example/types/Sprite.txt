@@ -1,0 +1,8 @@
+Knob (UnityEngine.Sprite) [native 1.72 KB, managed 24 bytes] root paths:
+HierarchyObject.Child1.SpriteHolder2.Image.m_Sprite
+
+UISprite (UnityEngine.Sprite) [native 1.56 KB, managed 24 bytes] root paths:
+HierarchyObject.Child1.SpriteHolder1.Image.m_Sprite
+
+UnitySplash-cube (UnityEngine.Sprite) [native 1.46 KB, managed 24 bytes] root paths:
+

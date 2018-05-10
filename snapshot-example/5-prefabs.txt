@@ -1,0 +1,15 @@
+PreviewMaterials [PreviewMaterials: GameObject (6310)] 456 bytes
+  cube [cube: GameObject (6294)] 96 bytes
+  cylinder [cylinder: GameObject (6298)] 96 bytes
+  sphere [sphere: GameObject (6308)] 96 bytes
+  torus [torus: GameObject (6278)] 96 bytes
+HandlesGO [HandlesGO: GameObject (10256)] 456 bytes
+  Cone [Cone: GameObject (10268)] 96 bytes
+  Cube [Cube: GameObject (10270)] 96 bytes
+  Cylinder [Cylinder: GameObject (10252)] 96 bytes
+  Sphere [Sphere: GameObject (10292)] 96 bytes
+SceneCamera [SceneCamera: GameObject (-1129144)] 120 bytes
+SceneLight [SceneLight: GameObject (-1129166)] 72 bytes
+SceneLight [SceneLight: GameObject (-1129160)] 72 bytes
+SceneLight [SceneLight: GameObject (-1129154)] 72 bytes
+InternalIdentityTransform [InternalIdentityTransform: GameObject (-30)] 48 bytes
