@@ -18,7 +18,7 @@ namespace UnityHeapCrawler
 				case TypeSizeMode.Self:
 					return typeStats.SelfSize;
 				case TypeSizeMode.Total:
-					return typeStats.SelfSize;
+					return typeStats.TotalSize;
 				case TypeSizeMode.Native:
 					return typeStats.NativeSize;
 				default:

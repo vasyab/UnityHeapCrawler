@@ -18,6 +18,7 @@ namespace UnityHeapCrawler
 		{
 			typeof(GameObject),
 			typeof(Component),
+			typeof(Material),
 			typeof(Texture),
 			typeof(Sprite),
 			typeof(Mesh)

@@ -80,6 +80,14 @@ namespace UnityHeapCrawler
 		[NotNull]
 		public readonly CrawlSettings UnityObjectsSettings;
 
+		/// <summary>
+		/// Only show new objects (compared to previous snapshot) in all reports
+		/// <para>
+		/// Useful to find memory leaks
+		/// </para>
+		/// </summary>
+		public bool DifferentialMode = true;
+
 		#region PrivateFields
 
 		[NotNull]
@@ -128,6 +136,10 @@ namespace UnityHeapCrawler
 			ScriptableObjectsSettings = CrawlSettings.CreateScriptableObjects(() => CollectUnityObjects(typeof(ScriptableObject)));
 			PrefabsSettings = CrawlSettings.CreatePrefabs(CollectPrefabs);
 			UnityObjectsSettings = CrawlSettings.CreateUnityObjects(() => CollectUnityObjects(typeof(Object)));
+
+			forbiddenTypes.Add(typeof(TypeData));
+			forbiddenTypes.Add(typeof(TypeStats));
+			forbiddenTypes.Add(typeof(SnapshotHistory));
 		}
 
 		/// <summary>
@@ -285,15 +297,23 @@ namespace UnityHeapCrawler
 			// 1. used definded roots (without Unity objects)
 			// 2. static fields (without Unity objects)
 			// 3. game objects in scene hierarchy (seperate view)
-			// 4. all remaining Unity objects (ScriptableObject and other stuff)
+			// 4. ScriptableObjects (with all referenced Unity objects)
+			// 5. Prefabs (with all referenced Unity objects)
+			// 6. all remaining Unity objects (ScriptableObject and other stuff)
+			// user can add custom groups using AddRootsGroup and AddUnityRootsGroup
 			try
 			{
-				forbiddenTypes.Add(typeof(TypeData));
-				forbiddenTypes.Add(typeof(TypeStats));
+				if (!DifferentialMode)
+					SnapshotHistory.Clear();
+
 				TypeData.Start();
 				TypeStats.Init(trackedTypes);
 
-				outputDir = "snapshot-" + DateTime.Now.ToString("s").Replace(":", "_") + '/';
+				outputDir = "snapshot-" + DateTime.Now.ToString("s").Replace(":", "_");
+				if (DifferentialMode && SnapshotHistory.IsPresent())
+					outputDir += "-diff";
+				outputDir += "/";
+
 				Directory.CreateDirectory(outputDir);
 
 				using (var log = new StreamWriter(outputDir + "log.txt"))
@@ -363,6 +383,9 @@ namespace UnityHeapCrawler
 #endif
 				PrintInstanceStats();
 
+				if (DifferentialMode)
+					SnapshotHistory.Store(visitedObjects);
+
 				Debug.Log("Heap snapshot created: " + outputDir);
 			}
 			finally
@@ -422,7 +445,7 @@ namespace UnityHeapCrawler
 
 				var dir = outputDir + "types/";
 				Directory.CreateDirectory(dir);
-				var fileName = dir + ts.Type.GetDisplayName() + ".txt";
+				var fileName = dir + ts.Type.GetFileName() + ".txt";
 				using (var f = new StreamWriter(fileName))
 				{
 					var instances = ts.Instances.Values.ToList();
@@ -510,6 +533,9 @@ namespace UnityHeapCrawler
 
 		private void AddStaticFields([NotNull] Type type, [NotNull] HashSet<string> genericStaticFields)
 		{
+			if (IsForbiddenType(type))
+				return;
+
 			var currentType = type;
 			while (currentType != null && currentType != typeof(object))
 			{
@@ -615,17 +641,23 @@ namespace UnityHeapCrawler
 					root.Cleanup(crawlSettings);
 					processedRoots++;
 
-					if (root.TotalSize >= crawlSettings.MinItemSize)
-						roots.Add(root);
+					if (!root.SubtreeUpdated)
+						continue;
+					if (root.TotalSize < crawlSettings.MinItemSize)
+						continue;
+					roots.Add(root);
 				}
 			}
 
 			roots.Sort();
-			using (var output = new StreamWriter($"{outputDir}{crawlIndex}-{crawlSettings.Filename}.txt"))
+			if (roots.Count > 0)
 			{
-				foreach (var root in roots)
+				using (var output = new StreamWriter($"{outputDir}{crawlIndex}-{crawlSettings.Filename}.txt"))
 				{
-					root.Print(output, sizeFormat);
+					foreach (var root in roots)
+					{
+						root.Print(output, sizeFormat);
+					}
 				}
 			}
 
@@ -751,6 +783,9 @@ namespace UnityHeapCrawler
 			var components = go.GetComponents<Component>();
 			foreach (var c in components)
 			{
+				if (ReferenceEquals(c, null))
+					continue;
+
 				QueueValue(parent, queue, c, c.GetType().GetDisplayName(), crawlSettings);
 			}
 
@@ -770,6 +805,11 @@ namespace UnityHeapCrawler
 		private bool IsForbidden([NotNull] object o)
 		{
 			return forbiddenTypes.Any(t => t.IsInstanceOfType(o));
+		}
+
+		private bool IsForbiddenType([NotNull] Type type)
+		{
+			return forbiddenTypes.Any(t => t.IsAssignableFrom(type));
 		}
 
 		private static bool IsValidAssembly(Assembly assembly)

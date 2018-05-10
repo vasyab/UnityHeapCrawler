@@ -30,6 +30,8 @@ namespace UnityHeapCrawler
 
 		private bool childrenFiltered;
 
+		internal bool SubtreeUpdated { get; private set; }
+
 		public CrawlItem([CanBeNull] CrawlItem parent, [NotNull] object o, [NotNull] string name)
 		{
 			Parent = parent;
@@ -69,14 +71,39 @@ namespace UnityHeapCrawler
 
 		public void Cleanup(CrawlSettings crawlSettings)
 		{
+			CleanupUnchanged();
+			CleanupInternal(crawlSettings);
+		}
+
+		private void CleanupUnchanged()
+		{
+			if (Children != null)
+			{
+				foreach (var c in Children)
+				{
+					c.CleanupUnchanged();
+				}
+
+				Children.RemoveAll(c => !c.SubtreeUpdated);
+				SubtreeUpdated = Children.Count > 0;
+			}
+
+			SubtreeUpdated |= SnapshotHistory.IsNew(Object);
+		}
+
+		public void CleanupInternal(CrawlSettings crawlSettings)
+		{
 			if (!crawlSettings.PrintChildren)
 				Children = null;
 
 			if (crawlSettings.MaxDepth > 0 && depth >= crawlSettings.MaxDepth)
 				Children = null;
 
+			if (SnapshotHistory.IsPresent() && SnapshotHistory.IsNew(Object))
+				Name = Name + " (new)";
+
 			// check for destroyed objects
-			var unityObject = Object as UnityEngine.Object;
+			var unityObject = Object as Object;
 			if (!ReferenceEquals(unityObject, null) && !unityObject)
 			{
 				const string destroyedObjectString = "(destroyed Unity Object)";
@@ -106,7 +133,7 @@ namespace UnityHeapCrawler
 			depth++;
 			foreach (var child in Children)
 			{
-				child.Cleanup(crawlSettings);
+				child.CleanupInternal(crawlSettings);
 			}
 			depth--;
 		}
@@ -135,7 +162,7 @@ namespace UnityHeapCrawler
 			}
 			else
 			{
-				w.Write(Object.GetType().GetDisplayName());
+				w.Write(Object.GetType().GetDisplayName());				
 			}
 			w.Write("]");
 
@@ -183,6 +210,9 @@ namespace UnityHeapCrawler
 
 		private int CalculateSelfSize()
 		{
+			if (!SnapshotHistory.IsNew(Object))
+				return 0;
+
 			string str = Object as string;
 			if (str != null)
 			{
@@ -235,6 +265,11 @@ namespace UnityHeapCrawler
 
 			// descending
 			return other.TotalSize.CompareTo(TotalSize);
+		}
+
+		public override string ToString()
+		{
+			return Object.ToString();
 		}
 	}
 }

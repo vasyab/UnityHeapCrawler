@@ -44,6 +44,9 @@ namespace UnityHeapCrawler
 
 		public static void RegisterItem([NotNull] CrawlItem item)
 		{
+			if (!SnapshotHistory.IsNew(item.Object))
+				return;
+
 			var stats = DemandTypeStats(item.Object.GetType());
 
 			stats.Count++;
@@ -60,6 +63,9 @@ namespace UnityHeapCrawler
 
 		public static void RegisterInstance([NotNull] CrawlItem parent, [NotNull] string name, [NotNull] object instance)
 		{
+			if (!SnapshotHistory.IsNew(instance))
+				return;
+
 			var stats = DemandTypeStats(instance.GetType());
 			if (!stats.tracked)
 				return;
