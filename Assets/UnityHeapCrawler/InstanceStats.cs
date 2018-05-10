@@ -5,7 +5,7 @@ using UnityEngine.Profiling;
 
 namespace UnityHeapCrawler
 {
-	public class InstanceStats : IComparable<InstanceStats>
+	internal class InstanceStats : IComparable<InstanceStats>
 	{
 		[NotNull]
 		public readonly object Instance;

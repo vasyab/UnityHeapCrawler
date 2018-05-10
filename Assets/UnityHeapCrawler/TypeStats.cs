@@ -7,7 +7,7 @@ using UnityEngine.Profiling;
 
 namespace UnityHeapCrawler
 {
-	public class TypeStats : IComparable<TypeStats>
+	internal class TypeStats : IComparable<TypeStats>
 	{
 		[NotNull]
 		public static readonly Dictionary<Type, TypeStats> Data = new Dictionary<Type, TypeStats>();

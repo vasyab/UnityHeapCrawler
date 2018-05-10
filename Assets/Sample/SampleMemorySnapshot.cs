@@ -21,7 +21,7 @@ namespace Sample
 			(
 				"animator-controllers",
 				"Animator Controllers",
-				CrawlPriority.SriptableObjects
+				CrawlOrder.SriptableObjects
 			);
 			animators.MinItemSize = 1;
 

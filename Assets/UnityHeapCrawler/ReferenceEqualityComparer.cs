@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 
 namespace UnityHeapCrawler
 {
-	public class ReferenceEqualityComparer : IEqualityComparer<object>
+	internal class ReferenceEqualityComparer : IEqualityComparer<object>
 	{
 		[NotNull]
 		public static ReferenceEqualityComparer Instance = new ReferenceEqualityComparer();

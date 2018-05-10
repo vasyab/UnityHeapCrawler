@@ -26,7 +26,7 @@ namespace UnityHeapCrawler
 
 		public bool Enabled = true;
 
-		internal readonly CrawlPriority Priority;
+		internal readonly CrawlOrder Order;
 
 		[NotNull]
 		internal readonly Action RootsCollector;
@@ -79,12 +79,12 @@ namespace UnityHeapCrawler
 			[NotNull] string filename,
 			[NotNull] string caption,
 			[NotNull] Action rootsCollector,
-			CrawlPriority priority)
+			CrawlOrder order)
 		{
 			Filename = filename;
 			Caption = caption;
 			RootsCollector = rootsCollector;
-			Priority = priority;
+			Order = order;
 		}
 
 		internal bool IsUnityTypeAllowed(Type type)
@@ -106,7 +106,7 @@ namespace UnityHeapCrawler
 		[NotNull]
 		public static CrawlSettings CreateUserRoots([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("user-roots", "User Roots", objectsProvider, CrawlPriority.UserRoots)
+			return new CrawlSettings("user-roots", "User Roots", objectsProvider, CrawlOrder.UserRoots)
 			{
 				MaxChildren = 0
 			};
@@ -115,7 +115,7 @@ namespace UnityHeapCrawler
 		[NotNull]
 		public static CrawlSettings CreateStaticFields([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("static-fields", "Static Roots", objectsProvider, CrawlPriority.StaticFields)
+			return new CrawlSettings("static-fields", "Static Roots", objectsProvider, CrawlOrder.StaticFields)
 			{
 				MaxDepth = 1
 			};
@@ -124,7 +124,7 @@ namespace UnityHeapCrawler
 		[NotNull]
 		public static CrawlSettings CreateHierarchy([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("hierarchy", "Hierarchy", objectsProvider, CrawlPriority.Hierarchy)
+			return new CrawlSettings("hierarchy", "Hierarchy", objectsProvider, CrawlOrder.Hierarchy)
 			{
 				PrintOnlyGameObjects = true,
 				MaxChildren = 0,
@@ -135,7 +135,7 @@ namespace UnityHeapCrawler
 		[NotNull]
 		public static CrawlSettings CreateScriptableObjects([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("scriptable_objects", "Scriptable Objects", objectsProvider, CrawlPriority.UnityObjects)
+			return new CrawlSettings("scriptable_objects", "Scriptable Objects", objectsProvider, CrawlOrder.UnityObjects)
 			{
 				IncludeAllUnityTypes = true
 			};
@@ -144,7 +144,7 @@ namespace UnityHeapCrawler
 		[NotNull]
 		public static CrawlSettings CreatePrefabs([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("prefabs", "Prefabs", objectsProvider, CrawlPriority.Prefabs)
+			return new CrawlSettings("prefabs", "Prefabs", objectsProvider, CrawlOrder.Prefabs)
 			{
 				PrintOnlyGameObjects = true,
 				MaxChildren = 0,
@@ -155,7 +155,7 @@ namespace UnityHeapCrawler
 		[NotNull]
 		public static CrawlSettings CreateUnityObjects([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("unity_objects", "Unity Objects", objectsProvider, CrawlPriority.UnityObjects);
+			return new CrawlSettings("unity_objects", "Unity Objects", objectsProvider, CrawlOrder.UnityObjects);
 		}
 
 		public override string ToString()
@@ -170,7 +170,7 @@ namespace UnityHeapCrawler
 				if (ReferenceEquals(x, y)) return 0;
 				if (ReferenceEquals(null, y)) return 1;
 				if (ReferenceEquals(null, x)) return -1;
-				return x.Priority.CompareTo(y.Priority);
+				return x.Order.CompareTo(y.Order);
 			}
 		}
 	}

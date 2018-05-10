@@ -1,6 +1,9 @@
 ﻿namespace UnityHeapCrawler
 {
-	public enum CrawlPriority
+	/// <summary>
+	/// Order for crawling groups
+	/// </summary>
+	public enum CrawlOrder
 	{
 		UserRoots,
 		StaticFields,

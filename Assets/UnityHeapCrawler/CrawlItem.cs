@@ -8,7 +8,7 @@ using Object = UnityEngine.Object;
 
 namespace UnityHeapCrawler
 {
-	public class CrawlItem : IComparable<CrawlItem>
+	internal class CrawlItem : IComparable<CrawlItem>
 	{
 		private static int depth;
 

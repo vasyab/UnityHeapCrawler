@@ -225,17 +225,17 @@ namespace UnityHeapCrawler
 		/// </summary>
 		/// <param name="filename">Filename for group output</param>
 		/// <param name="caption">Group caption</param>
-		/// <param name="priority">Crawling priority</param>
+		/// <param name="order">Crawling priority</param>
 		/// <param name="roots">Root objects</param>
 		/// <returns>Crawl settings for further configuration</returns>
 		[NotNull]
 		public CrawlSettings AddRootsGroup(
 			[NotNull] string filename, 
 			[NotNull] string caption, 
-			CrawlPriority priority,
+			CrawlOrder order,
 			params object[] roots)
 		{
-			var crawlSettings = new CrawlSettings(filename, caption, () => CollectRoots(roots), priority);
+			var crawlSettings = new CrawlSettings(filename, caption, () => CollectRoots(roots), order);
 			crawlOrder.Add(crawlSettings);
 			return crawlSettings;
 		}
@@ -246,15 +246,15 @@ namespace UnityHeapCrawler
 		/// </summary>
 		/// <param name="filename">Filename for group output</param>
 		/// <param name="caption">Group caption</param>
-		/// <param name="priority">Crawling priority</param>
+		/// <param name="order">Crawling priority</param>
 		/// <returns>Crawl settings for further configuration</returns>
 		[NotNull]
 		public CrawlSettings AddUnityRootsGroup<T>(
 			[NotNull] string filename,
 			[NotNull] string caption,
-			CrawlPriority priority)
+			CrawlOrder order)
 		{
-			var crawlSettings = new CrawlSettings(filename, caption, () => CollectUnityObjects(typeof(T)), priority)
+			var crawlSettings = new CrawlSettings(filename, caption, () => CollectUnityObjects(typeof(T)), order)
 			{
 				IncludeAllUnityTypes = true
 			};

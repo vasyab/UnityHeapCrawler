@@ -2,14 +2,14 @@
 
 namespace UnityHeapCrawler
 {
-	public enum TypeSizeMode
+	internal enum TypeSizeMode
 	{
 		Self,
 		Total,
 		Native
 	}
 
-	public static class TypeSizeModeEx
+	internal static class TypeSizeModeEx
 	{
 		public static long GetSize(this TypeSizeMode mode, TypeStats typeStats)
 		{

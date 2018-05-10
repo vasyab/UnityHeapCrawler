@@ -5,7 +5,7 @@ using JetBrains.Annotations;
 
 namespace UnityHeapCrawler
 {
-	public static class SnapshotHistory
+	internal static class SnapshotHistory
 	{
 		[CanBeNull]
 		private static ConditionalWeakTable<object, object> seenObjects;

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace UnityHeapCrawler
 {
-	public class TypeData
+	internal class TypeData
 	{
 		public int Size { get; private set; }
 		public List<FieldInfo> DynamicSizedFields { get; private set; }
