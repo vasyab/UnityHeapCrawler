@@ -6,8 +6,8 @@ Customizable heap snapshotting tool for Unity game engine. Can be used to detect
 1. Reflection-based
 2. Results are plain text (see [output example](snapshot-example/))
 3. Human readable results (objects are traversed using [BFS](https://en.wikipedia.org/wiki/Breadth-first_search))
-4. Differential mode that displays only new objects in all reports (see [diffs output example](snapshot-example-diffs/))
-5. Enable tracking all root paths for specific types (see [output](snapshot-example/types) and [differential output](snapshot-example-diffs/types))
+4. Differential mode that displays only new objects in all reports (see [diffs output](snapshot-example-diff/))
+5. Enable tracking all root paths for specific types (see [output](snapshot-example/types) and [diffs output](snapshot-example-diff/types))
 6. Little memory overhead - most crawling data is discared after aggregation
 7. Highly customizable - choose between fullness and low memory usage (see [documentation](https://vasyab.github.io/UnityHeapCrawler_Docs/class_unity_heap_crawler_1_1_heap_snapshot_collector.html))
 8. References to destroyed Unity objects that still take heap space are clearly visible
