@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using UnityEngine;
 
 namespace UnityHeapCrawler
 {
@@ -11,6 +12,16 @@ namespace UnityHeapCrawler
 	{
 		[NotNull]
 		public static IComparer<CrawlSettings> PriorityComparer { get; } = new PriorityRelationalComparer();
+
+		[NotNull]
+		private static readonly Type[] s_HierarchyTypes =
+		{
+			typeof(GameObject),
+			typeof(Component),
+			typeof(Texture),
+			typeof(Sprite),
+			typeof(Mesh)
+		};
 
 		public bool Enabled = true;
 
@@ -38,9 +49,15 @@ namespace UnityHeapCrawler
 		public bool PrintOnlyGameObjects = false;
 
 		/// <summary>
-		/// Follow references to unity objects or leave them for a later crawling stage
+		/// Follow references to all unity objects or leave them for a later crawling stage
 		/// </summary>
-		public bool IncludeUnityObjects = false;
+		public bool IncludeAllUnityTypes = false;
+
+		/// <summary>
+		/// Follow references to unity objects of specific types
+		/// </summary>
+		[NotNull]
+		public List<Type> IncludedUnityTypes = new List<Type>();
 
 		/// <summary>
 		/// Maximum children depth in memory tree. 0 - infinity.
@@ -69,6 +86,22 @@ namespace UnityHeapCrawler
 			Priority = priority;
 		}
 
+		internal bool IsUnityTypeAllowed(Type type)
+		{
+			if (IncludeAllUnityTypes)
+				return true;
+
+			foreach (var allowedType in IncludedUnityTypes)
+			{
+				if (allowedType.IsAssignableFrom(type))
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+
 		[NotNull]
 		public static CrawlSettings CreateUserRoots([NotNull] Action objectsProvider)
 		{
@@ -93,7 +126,8 @@ namespace UnityHeapCrawler
 			return new CrawlSettings("hierarchy", "Hierarchy", objectsProvider, CrawlPriority.Hierarchy)
 			{
 				PrintOnlyGameObjects = true,
-				MaxChildren = 0
+				MaxChildren = 0,
+				IncludedUnityTypes = new List<Type>(s_HierarchyTypes)
 			};
 		}
 
@@ -102,7 +136,7 @@ namespace UnityHeapCrawler
 		{
 			return new CrawlSettings("scriptable_objects", "Scriptable Objects", objectsProvider, CrawlPriority.UnityObjects)
 			{
-				IncludeUnityObjects = true
+				IncludeAllUnityTypes = true
 			};
 		}
 
@@ -112,7 +146,8 @@ namespace UnityHeapCrawler
 			return new CrawlSettings("prefabs", "Prefabs", objectsProvider, CrawlPriority.Prefabs)
 			{
 				PrintOnlyGameObjects = true,
-				MaxChildren = 0
+				MaxChildren = 0,
+				IncludedUnityTypes = new List<Type>(s_HierarchyTypes)
 			};
 		}
 

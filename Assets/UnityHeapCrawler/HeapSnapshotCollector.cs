@@ -241,11 +241,10 @@ namespace UnityHeapCrawler
 			[NotNull] string filename,
 			[NotNull] string caption,
 			CrawlPriority priority)
-			where T : Object
 		{
 			var crawlSettings = new CrawlSettings(filename, caption, () => CollectUnityObjects(typeof(T)), priority)
 			{
-				IncludeUnityObjects = true
+				IncludeAllUnityTypes = true
 			};
 			crawlOrder.Add(crawlSettings);
 			return crawlSettings;
@@ -646,18 +645,18 @@ namespace UnityHeapCrawler
 
 				if (type.IsArray)
 				{
-					QueueArrayElements(next, queue, next.Object, crawlSettings.IncludeUnityObjects);
+					QueueArrayElements(next, queue, next.Object, crawlSettings);
 				}
 				if (type == typeof(GameObject))
 				{
-					QueueHierarchy(next, queue, next.Object);
+					QueueHierarchy(next, queue, next.Object, crawlSettings);
 				}
 				if (typeData.DynamicSizedFields != null)
 				{
 					foreach (var field in typeData.DynamicSizedFields)
 					{
 						var v = field.GetValue(next.Object);
-						QueueValue(next, queue, v, field.Name, crawlSettings.IncludeUnityObjects);
+						QueueValue(next, queue, v, field.Name, crawlSettings);
 					}
 				}
 			}
@@ -687,7 +686,7 @@ namespace UnityHeapCrawler
 			[NotNull] Queue<CrawlItem> queue,
 			[CanBeNull] object v,
 			[NotNull] string name,
-			bool allowUnityObjects)
+			[NotNull] CrawlSettings crawlSettings)
 		{
 			if (v == null)
 				return;
@@ -699,7 +698,7 @@ namespace UnityHeapCrawler
 			if (visitedObjects.Contains(v))
 				return;
 
-			if (!allowUnityObjects && unityObjects.Contains(v))
+			if (unityObjects.Contains(v) && !crawlSettings.IsUnityTypeAllowed(v.GetType()))
 				return;
 
 			if (IsRoot(v))
@@ -719,7 +718,7 @@ namespace UnityHeapCrawler
 			[NotNull] CrawlItem parent,
 			[NotNull] Queue<CrawlItem> queue,
 			[CanBeNull] object array,
-			bool allowUnityObjects)
+			[NotNull] CrawlSettings crawlSettings)
 		{
 			if (array == null)
 				return;
@@ -734,7 +733,7 @@ namespace UnityHeapCrawler
 			int index = 0;
 			foreach (var arrayItem in (Array) array)
 			{
-				QueueValue(parent, queue, arrayItem, $"[{index}]", allowUnityObjects);
+				QueueValue(parent, queue, arrayItem, $"[{index}]", crawlSettings);
 				index++;
 			}
 		}
@@ -742,7 +741,8 @@ namespace UnityHeapCrawler
 		private void QueueHierarchy(
 			[NotNull] CrawlItem parent,
 			[NotNull] Queue<CrawlItem> queue,
-			[CanBeNull] object v)
+			[CanBeNull] object v,
+			[NotNull] CrawlSettings crawlSettings)
 		{
 			var go = v as GameObject;
 			if (go == null)
@@ -751,14 +751,14 @@ namespace UnityHeapCrawler
 			var components = go.GetComponents<Component>();
 			foreach (var c in components)
 			{
-				QueueValue(parent, queue, c, "", true);
+				QueueValue(parent, queue, c, c.GetType().GetDisplayName(), crawlSettings);
 			}
 
 			var t = go.transform;
 			for (int i = 0; i < t.childCount; ++i)
 			{
 				var childGo = t.GetChild(i).gameObject;
-				QueueValue(parent, queue, childGo, childGo.name, true);
+				QueueValue(parent, queue, childGo, childGo.name, crawlSettings);
 			}
 		}
 

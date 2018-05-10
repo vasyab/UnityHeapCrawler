@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace UnityHeapCrawler
 {
@@ -122,7 +123,20 @@ namespace UnityHeapCrawler
 			}
 
 			w.Write("[");
-			w.Write(Object.GetType().GetDisplayName());
+			var uo = Object as Object;
+			if (uo != null)
+			{
+				w.Write(uo.name);
+				w.Write(": ");
+				w.Write(Object.GetType().GetDisplayName());
+				w.Write(" (");
+				w.Write(uo.GetInstanceID());
+				w.Write(")");
+			}
+			else
+			{
+				w.Write(Object.GetType().GetDisplayName());
+			}
 			w.Write("]");
 
 			w.Write(" ");

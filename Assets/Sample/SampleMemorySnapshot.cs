@@ -14,6 +14,7 @@ namespace Sample
 				.AddRoot(Game.Instance, "Game.Instance")
 				.AddRootTypes(typeof(UnitsGroup))
 				.AddTrackedTypes(typeof(Unit))
+				.AddTrackedTypes(typeof(Sprite))
 				.AddTrackedTypes(typeof(Texture));
 
 			var animators = collector.AddUnityRootsGroup<AnimatorController>
