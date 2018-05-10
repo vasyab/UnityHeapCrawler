@@ -1,4 +1,6 @@
-﻿using JetBrains.Annotations;
+﻿using System;
+using System.Collections.Generic;
+using JetBrains.Annotations;
 
 namespace UnityHeapCrawler
 {
@@ -7,13 +9,17 @@ namespace UnityHeapCrawler
 	/// </summary>
 	public class CrawlSettings
 	{
+		[NotNull]
+		public static IComparer<CrawlSettings> PriorityComparer { get; } = new PriorityRelationalComparer();
+
 		public bool Enabled = true;
 
+		internal readonly CrawlPriority Priority;
+
+		[NotNull]
+		internal readonly Action RootsCollector;
+
 		internal readonly string Caption;
-
-		internal readonly float StartProgress;
-
-		internal readonly float EndProgress;
 
 		/// <summary>
 		/// Resulting memory tree file name.
@@ -30,6 +36,11 @@ namespace UnityHeapCrawler
 		/// Print only GameObjects in hierarchy mode.
 		/// </summary>
 		public bool PrintOnlyGameObjects = false;
+
+		/// <summary>
+		/// Follow references to unity objects or leave them for a later crawling stage
+		/// </summary>
+		public bool IncludeUnityObjects = false;
 
 		/// <summary>
 		/// Maximum children depth in memory tree. 0 - infinity.
@@ -49,31 +60,37 @@ namespace UnityHeapCrawler
 		public CrawlSettings(
 			[NotNull] string filename,
 			[NotNull] string caption,
-			float startProgress,
-			float endProgress)
+			[NotNull] Action rootsCollector,
+			CrawlPriority priority)
 		{
 			Filename = filename;
 			Caption = caption;
-			StartProgress = startProgress;
-			EndProgress = endProgress;
+			RootsCollector = rootsCollector;
+			Priority = priority;
 		}
 
 		[NotNull]
-		public static CrawlSettings CreateCustomRoots()
+		public static CrawlSettings CreateUserRoots([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("1-custom-roots.txt", "User Roots", 0.1f, 0.3f) {MaxChildren = 0};
+			return new CrawlSettings("user-roots", "User Roots", objectsProvider, CrawlPriority.UserRoots)
+			{
+				MaxChildren = 0
+			};
 		}
 
 		[NotNull]
-		public static CrawlSettings CreateStaticFields()
+		public static CrawlSettings CreateStaticFields([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("2-static-fields.txt", "Static Roots", 0.3f, 0.5f) {MaxDepth = 1};
+			return new CrawlSettings("static-fields", "Static Roots", objectsProvider, CrawlPriority.StaticFields)
+			{
+				MaxDepth = 1
+			};
 		}
 
 		[NotNull]
-		public static CrawlSettings CreateHierarchy()
+		public static CrawlSettings CreateHierarchy([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("3-hierarchy.txt", "Hierarchy", 0.5f, 0.7f)
+			return new CrawlSettings("hierarchy", "Hierarchy", objectsProvider, CrawlPriority.Hierarchy)
 			{
 				PrintOnlyGameObjects = true,
 				MaxChildren = 0
@@ -81,9 +98,44 @@ namespace UnityHeapCrawler
 		}
 
 		[NotNull]
-		public static CrawlSettings CreateUnityObjects()
+		public static CrawlSettings CreateScriptableObjects([NotNull] Action objectsProvider)
 		{
-			return new CrawlSettings("4-unity_objects.txt", "Unity Objects", 0.7f, 0.9f);
+			return new CrawlSettings("scriptable_objects", "Scriptable Objects", objectsProvider, CrawlPriority.UnityObjects)
+			{
+				IncludeUnityObjects = true
+			};
+		}
+
+		[NotNull]
+		public static CrawlSettings CreatePrefabs([NotNull] Action objectsProvider)
+		{
+			return new CrawlSettings("prefabs", "Prefabs", objectsProvider, CrawlPriority.Prefabs)
+			{
+				PrintOnlyGameObjects = true,
+				MaxChildren = 0
+			};
+		}
+
+		[NotNull]
+		public static CrawlSettings CreateUnityObjects([NotNull] Action objectsProvider)
+		{
+			return new CrawlSettings("unity_objects", "Unity Objects", objectsProvider, CrawlPriority.UnityObjects);
+		}
+
+		public override string ToString()
+		{
+			return $"Crawl Settings [{Caption}, {Filename}]";
+		}
+
+		private sealed class PriorityRelationalComparer : IComparer<CrawlSettings>
+		{
+			public int Compare(CrawlSettings x, CrawlSettings y)
+			{
+				if (ReferenceEquals(x, y)) return 0;
+				if (ReferenceEquals(null, y)) return 1;
+				if (ReferenceEquals(null, x)) return -1;
+				return x.Priority.CompareTo(y.Priority);
+			}
 		}
 	}
 }

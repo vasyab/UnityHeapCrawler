@@ -21,14 +21,14 @@ namespace UnityHeapCrawler
 	public class HeapSnapshotCollector
 	{
 		/// <summary>
-		/// <see cref="CrawlSettings"/> for custom defined roots. 
+		/// <see cref="CrawlSettings"/> for user defined roots. 
 		/// <para>
 		/// Modify them after construction to change output format or disable crawling.
 		/// Be careful when reducing filtering - large crawl trees will affect memory consumption.
 		/// </para>
 		/// </summary>
 		[NotNull]
-		public readonly CrawlSettings CustomRootsSettings = CrawlSettings.CreateCustomRoots();
+		public readonly CrawlSettings UserRootsSettings;
 
 		/// <summary>
 		/// <see cref="CrawlSettings"/> for static fields in all types. 
@@ -38,7 +38,7 @@ namespace UnityHeapCrawler
 		/// </para>
 		/// </summary>
 		[NotNull]
-		public readonly CrawlSettings StaticFieldsSettings = CrawlSettings.CreateStaticFields();
+		public readonly CrawlSettings StaticFieldsSettings;
 
 		/// <summary>
 		/// <see cref="CrawlSettings"/> for GameObjects in scene hierarchy.
@@ -48,20 +48,42 @@ namespace UnityHeapCrawler
 		/// </para>
 		/// </summary>
 		[NotNull]
-		public readonly CrawlSettings HierarchySettings = CrawlSettings.CreateHierarchy();
+		public readonly CrawlSettings HierarchySettings;
 
 		/// <summary>
-		/// <see cref="CrawlSettings"/> for all other Unity objects (ScriptableObject, Texture, Material, etc).		
+		/// <see cref="CrawlSettings"/> for all ScriptableObjects.		
 		/// <para>
 		/// Modify them after construction to change output format or disable crawling.
 		/// Be careful when reducing filtering - large crawl trees will affect memory consumption.
 		/// </para>
-
 		/// </summary>
 		[NotNull]
-		public readonly CrawlSettings UnityObjectsSettings = CrawlSettings.CreateUnityObjects();
+		public readonly CrawlSettings ScriptableObjectsSettings;
+
+		/// <summary>
+		/// <see cref="CrawlSettings"/> for all loaded Prefabs.
+		/// <para>
+		/// Modify them after construction to change output format or disable crawling.
+		/// Be careful when reducing filtering - large crawl trees will affect memory consumption.
+		/// </para>
+		/// </summary>
+		[NotNull]
+		public readonly CrawlSettings PrefabsSettings;
+
+		/// <summary>
+		/// <see cref="CrawlSettings"/> for all other Unity objects (Texture, Material, etc).		
+		/// <para>
+		/// Modify them after construction to change output format or disable crawling.
+		/// Be careful when reducing filtering - large crawl trees will affect memory consumption.
+		/// </para>
+		/// </summary>
+		[NotNull]
+		public readonly CrawlSettings UnityObjectsSettings;
 
 		#region PrivateFields
+
+		[NotNull]
+		private readonly List<CrawlSettings> crawlOrder = new List<CrawlSettings>();
 
 		[NotNull]
 		private readonly List<CrawlItem> customRoots = new List<CrawlItem>();
@@ -97,6 +119,16 @@ namespace UnityHeapCrawler
 		private string outputDir = "";
 
 		#endregion
+
+		public HeapSnapshotCollector()
+		{
+			UserRootsSettings = CrawlSettings.CreateUserRoots(CollectUserRoots);
+			StaticFieldsSettings = CrawlSettings.CreateStaticFields(CollectStaticFields);
+			HierarchySettings = CrawlSettings.CreateHierarchy(CollectRootHierarchyGameObjects);
+			ScriptableObjectsSettings = CrawlSettings.CreateScriptableObjects(() => CollectUnityObjects(typeof(ScriptableObject)));
+			PrefabsSettings = CrawlSettings.CreatePrefabs(CollectPrefabs);
+			UnityObjectsSettings = CrawlSettings.CreateUnityObjects(() => CollectUnityObjects(typeof(Object)));
+		}
 
 		/// <summary>
 		/// <para>Add custom root. It will be crawled before any other objects.</para>
@@ -176,6 +208,50 @@ namespace UnityHeapCrawler
 		}
 
 		/// <summary>
+		/// <para>Add custom roots crawling group. Results will be wrtitten to a seperate file.</para>
+		/// <para>Explicit objects version.</para>
+		/// </summary>
+		/// <param name="filename">Filename for group output</param>
+		/// <param name="caption">Group caption</param>
+		/// <param name="priority">Crawling priority</param>
+		/// <param name="roots">Root objects</param>
+		/// <returns>Crawl settings for further configuration</returns>
+		[NotNull]
+		public CrawlSettings AddRootsGroup(
+			[NotNull] string filename, 
+			[NotNull] string caption, 
+			CrawlPriority priority,
+			params object[] roots)
+		{
+			var crawlSettings = new CrawlSettings(filename, caption, () => CollectRoots(roots), priority);
+			crawlOrder.Add(crawlSettings);
+			return crawlSettings;
+		}
+
+		/// <summary>
+		/// <para>Add custom roots crawling group. Results will be wrtitten to a seperate file.</para>
+		/// <para>All Unity objects of specified type are included in the group.</para>
+		/// </summary>
+		/// <param name="filename">Filename for group output</param>
+		/// <param name="caption">Group caption</param>
+		/// <param name="priority">Crawling priority</param>
+		/// <returns>Crawl settings for further configuration</returns>
+		[NotNull]
+		public CrawlSettings AddUnityRootsGroup<T>(
+			[NotNull] string filename,
+			[NotNull] string caption,
+			CrawlPriority priority)
+			where T : Object
+		{
+			var crawlSettings = new CrawlSettings(filename, caption, () => CollectUnityObjects(typeof(T)), priority)
+			{
+				IncludeUnityObjects = true
+			};
+			crawlOrder.Add(crawlSettings);
+			return crawlSettings;
+		}
+
+		/// <summary>
 		/// <para>Set minimum size for type to be included in types report.</para>
 		/// <para>All instances of the type should be at least this size total for type to be included in type report.</para>
 		/// </summary>
@@ -213,6 +289,8 @@ namespace UnityHeapCrawler
 			// 4. all remaining Unity objects (ScriptableObject and other stuff)
 			try
 			{
+				forbiddenTypes.Add(typeof(TypeData));
+				forbiddenTypes.Add(typeof(TypeStats));
 				TypeData.Start();
 				TypeStats.Init(trackedTypes);
 
@@ -224,11 +302,23 @@ namespace UnityHeapCrawler
 					log.AutoFlush = true;
 
 					GC.Collect();
+					GC.Collect();
 					log.WriteLine("Mono Size Min: " + sizeFormat.Format(Profiler.GetMonoUsedSizeLong()));
 					log.WriteLine("Mono Size Max: " + sizeFormat.Format(Profiler.GetMonoHeapSizeLong()));
 					log.WriteLine("Total Allocated: " + sizeFormat.Format(Profiler.GetTotalAllocatedMemoryLong()));
 					log.WriteLine("Total Reserved: " + sizeFormat.Format(Profiler.GetTotalReservedMemoryLong()));
 					log.WriteLine();
+					
+					// now add predefined crawl settings and sort by priority
+					// all user crawl settings were added before so they will precede predefined ones with same priority
+					crawlOrder.Add(UserRootsSettings);
+					crawlOrder.Add(StaticFieldsSettings);
+					crawlOrder.Add(HierarchySettings);
+					crawlOrder.Add(ScriptableObjectsSettings);
+					crawlOrder.Add(PrefabsSettings);
+					crawlOrder.Add(UnityObjectsSettings);
+					crawlOrder.RemoveAll(cs => !cs.Enabled);
+					crawlOrder.Sort(CrawlSettings.PriorityComparer);
 
 #if UNITY_EDITOR
 					EditorUtility.DisplayProgressBar("Heap Snapshot", "Collecting Unity Objects...", 0f);
@@ -240,23 +330,25 @@ namespace UnityHeapCrawler
 						unityObjects.Add(o);
 					}
 
-					int customRootsSize = CrawlCustomRoots();
-					if (customRootsSize > 0)
-						log.WriteLine("Custom roots size: " + sizeFormat.Format(customRootsSize));
+					int totalSize = 0;
+					float progressStep = 0.8f / crawlOrder.Count;
+					for (var i = 0; i < crawlOrder.Count; i++)
+					{
+						float startProgress = 0.1f + progressStep * i;
+						float endProgress = 0.1f + progressStep * (i + 1);
+						var crawlSettings = crawlOrder[i];
 
-					int staticRootsSize = CrawlStaticFields();
-					if (staticRootsSize > 0)
-						log.WriteLine("Static fields size: " + sizeFormat.Format(staticRootsSize));
+						DisplayCollectProgressBar(crawlSettings, startProgress);
 
-					int hierarchySize = CrawlHierarchy();
-					if (hierarchySize > 0)
-						log.WriteLine("Heirarchy size: " + sizeFormat.Format(hierarchySize));
+						crawlSettings.RootsCollector();
 
-					int unityObjectsSize = CrawlUnityObjects();
-					if (unityObjectsSize > 0)
-						log.WriteLine("Unity objects size: " + sizeFormat.Format(unityObjectsSize));
+						int displayIndex = i + 1;
+						int rootsSize = CrawlRoots(crawlSettings, displayIndex, startProgress, endProgress);
 
-					int totalSize = customRootsSize + staticRootsSize + hierarchySize + unityObjectsSize;
+						log.WriteLine($"{crawlSettings.Caption} size: " + sizeFormat.Format(rootsSize));
+						totalSize += rootsSize;
+					}
+
 					log.WriteLine("Total size: " + sizeFormat.Format(totalSize));
 				}
 
@@ -289,42 +381,6 @@ namespace UnityHeapCrawler
 			new HeapSnapshotCollector().Start();
 		}
 #endif
-
-		private int CrawlCustomRoots()
-		{
-			if (!CustomRootsSettings.Enabled)
-				return 0;
-			DisplayCollectProgressBar(CustomRootsSettings);
-			CollectCustomRoots();
-			return CrawlRoots(CustomRootsSettings);
-		}
-
-		private int CrawlStaticFields()
-		{
-			if (!StaticFieldsSettings.Enabled)
-				return 0;
-			DisplayCollectProgressBar(StaticFieldsSettings);
-			CollectStaticFields();
-			return CrawlRoots(StaticFieldsSettings);
-		}
-
-		private int CrawlHierarchy()
-		{
-			if (!HierarchySettings.Enabled)
-				return 0;
-			DisplayCollectProgressBar(HierarchySettings);
-			CollectRootGameObjects();
-			return CrawlRoots(HierarchySettings);
-		}
-
-		private int CrawlUnityObjects()
-		{
-			if (!UnityObjectsSettings.Enabled)
-				return 0;
-			DisplayCollectProgressBar(UnityObjectsSettings);
-			CollectAllUnityObjects();
-			return CrawlRoots(UnityObjectsSettings);
-		}
 
 		private void PrintTypeStats(TypeSizeMode mode, string filename)
 		{
@@ -399,12 +455,21 @@ namespace UnityHeapCrawler
 			}
 		}
 
-		private void CollectCustomRoots()
+		private void CollectUserRoots()
 		{
 			foreach (var root in customRoots)
 			{
 				visitedObjects.Add(root.Object);
 				rootsQueue.Enqueue(root);
+			}
+		}
+
+		private void CollectRoots(object[] roots)
+		{
+			foreach (var root in roots)
+			{
+				var name = root.GetType().GetDisplayName();
+				EnqueueRoot(root, name, false);
 			}
 		}
 
@@ -468,13 +533,14 @@ namespace UnityHeapCrawler
 			}
 		}
 
-		private void CollectRootGameObjects()
+		private void CollectRootHierarchyGameObjects()
 		{
 			foreach (var o in unityObjects)
-
 			{
 				var go = o as GameObject;
 				if (go == null)
+					continue;
+				if (!go.scene.IsValid())
 					continue;
 				if (go.transform.parent != null)
 					continue;
@@ -482,24 +548,41 @@ namespace UnityHeapCrawler
 			}
 		}
 
-		private void CollectAllUnityObjects()
+		private void CollectPrefabs()
 		{
 			foreach (var o in unityObjects)
 			{
+				var go = o as GameObject;
+				if (go == null)
+					continue;
+				if (go.scene.IsValid())
+					continue;
+				if (go.transform.parent != null)
+					continue;
+				EnqueueRoot(go, go.name, false);
+			}
+		}
+
+		private void CollectUnityObjects(Type type)
+		{
+			foreach (var o in unityObjects)
+			{
+				if (!type.IsInstanceOfType(o))
+					continue;
+
 				var uo = (Object) o;
 				EnqueueRoot(uo, uo.name, false);
 			}
 		}
 
-		private static void DisplayCollectProgressBar([NotNull] CrawlSettings crawlSettings)
+		private static void DisplayCollectProgressBar([NotNull] CrawlSettings crawlSettings, float startProgress)
 		{
 #if UNITY_EDITOR
-			EditorUtility.DisplayProgressBar("Heap Snapshot", "Collecting: " + crawlSettings.Caption + "...",
-				crawlSettings.StartProgress);
+			EditorUtility.DisplayProgressBar("Heap Snapshot", "Collecting: " + crawlSettings.Caption + "...", startProgress);
 #endif
 		}
 
-		private int CrawlRoots([NotNull] CrawlSettings crawlSettings)
+		private int CrawlRoots([NotNull] CrawlSettings crawlSettings, int crawlIndex, float startProgress, float endProgress)
 		{
 			if (rootsQueue.Count <= 0)
 				return 0;
@@ -520,15 +603,15 @@ namespace UnityHeapCrawler
 						int remainingRoots = rootsQueue.Count + localRootsQueue.Count;
 						int totalRoots = remainingRoots + processedRoots;
 						float progress = Mathf.Lerp(
-							crawlSettings.StartProgress,
-							crawlSettings.EndProgress,
+							startProgress,
+							endProgress,
 							1f * processedRoots / totalRoots
 						);
 						EditorUtility.DisplayProgressBar("Heap Snapshot", "Crawling: " + crawlSettings.Caption + "...", progress);
 					}
 #endif
 					var root = localRootsQueue.Dequeue();
-					CrawlRoot(root);
+					CrawlRoot(root, crawlSettings);
 					totalSize += root.TotalSize;
 					root.Cleanup(crawlSettings);
 					processedRoots++;
@@ -539,7 +622,7 @@ namespace UnityHeapCrawler
 			}
 
 			roots.Sort();
-			using (var output = new StreamWriter(outputDir + crawlSettings.Filename))
+			using (var output = new StreamWriter($"{outputDir}{crawlIndex}-{crawlSettings.Filename}.txt"))
 			{
 				foreach (var root in roots)
 				{
@@ -550,7 +633,7 @@ namespace UnityHeapCrawler
 			return totalSize;
 		}
 
-		private void CrawlRoot([NotNull] CrawlItem root)
+		private void CrawlRoot([NotNull] CrawlItem root, [NotNull] CrawlSettings crawlSettings)
 		{
 			var queue = new Queue<CrawlItem>();
 			queue.Enqueue(root);
@@ -563,7 +646,7 @@ namespace UnityHeapCrawler
 
 				if (type.IsArray)
 				{
-					QueueArrayElements(next, queue, next.Object);
+					QueueArrayElements(next, queue, next.Object, crawlSettings.IncludeUnityObjects);
 				}
 				if (type == typeof(GameObject))
 				{
@@ -574,7 +657,7 @@ namespace UnityHeapCrawler
 					foreach (var field in typeData.DynamicSizedFields)
 					{
 						var v = field.GetValue(next.Object);
-						QueueValue(next, queue, v, field.Name);
+						QueueValue(next, queue, v, field.Name, crawlSettings.IncludeUnityObjects);
 					}
 				}
 			}
@@ -604,7 +687,7 @@ namespace UnityHeapCrawler
 			[NotNull] Queue<CrawlItem> queue,
 			[CanBeNull] object v,
 			[NotNull] string name,
-			bool allowUnityObjects = false)
+			bool allowUnityObjects)
 		{
 			if (v == null)
 				return;
@@ -635,7 +718,8 @@ namespace UnityHeapCrawler
 		private void QueueArrayElements(
 			[NotNull] CrawlItem parent,
 			[NotNull] Queue<CrawlItem> queue,
-			[CanBeNull] object array)
+			[CanBeNull] object array,
+			bool allowUnityObjects)
 		{
 			if (array == null)
 				return;
@@ -647,9 +731,11 @@ namespace UnityHeapCrawler
 			if (elementType == null)
 				return;
 
+			int index = 0;
 			foreach (var arrayItem in (Array) array)
 			{
-				QueueValue(parent, queue, arrayItem, "");
+				QueueValue(parent, queue, arrayItem, $"[{index}]", allowUnityObjects);
+				index++;
 			}
 		}
 

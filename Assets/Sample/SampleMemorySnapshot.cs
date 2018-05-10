@@ -1,5 +1,6 @@
 ﻿using UnityHeapCrawler;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Sample
@@ -15,10 +16,22 @@ namespace Sample
 				.AddTrackedTypes(typeof(Unit))
 				.AddTrackedTypes(typeof(Texture));
 
-			collector.CustomRootsSettings.MinItemSize = 1;
+			var animators = collector.AddUnityRootsGroup<AnimatorController>
+			(
+				"animator-controllers",
+				"Animator Controllers",
+				CrawlPriority.SriptableObjects
+			);
+			animators.MinItemSize = 1;
+
+			collector.UserRootsSettings.MinItemSize = 1;
 
 			collector.HierarchySettings.MinItemSize = 1;
 			collector.HierarchySettings.PrintOnlyGameObjects = false;
+
+			collector.PrefabsSettings.MinItemSize = 1;
+
+			collector.UnityObjectsSettings.MinItemSize = 1;
 
 			collector.Start();
 		}
