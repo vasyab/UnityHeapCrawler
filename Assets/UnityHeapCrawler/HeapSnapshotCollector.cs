@@ -88,6 +88,16 @@ namespace UnityHeapCrawler
 		/// </summary>
 		public bool DifferentialMode = true;
 
+		/// <summary>
+		/// Which size estimations are used
+		/// <para>
+		/// - Managed - heap estimation
+		/// - Native - native size estimation for Unity objects
+		/// - Total - Managed + Native
+		/// </para>
+		/// </summary>
+		public SizeMode SizeMode = SizeMode.Managed;
+
 		#region PrivateFields
 
 		[NotNull]
@@ -349,7 +359,7 @@ namespace UnityHeapCrawler
 						unityObjects.Add(o);
 					}
 
-					int totalSize = 0;
+					long totalSize = 0;
 					float progressStep = 0.8f / crawlOrder.Count;
 					for (var i = 0; i < crawlOrder.Count; i++)
 					{
@@ -362,7 +372,7 @@ namespace UnityHeapCrawler
 						crawlSettings.RootsCollector();
 
 						int displayIndex = i + 1;
-						int rootsSize = CrawlRoots(crawlSettings, displayIndex, startProgress, endProgress);
+						long rootsSize = CrawlRoots(crawlSettings, displayIndex, startProgress, endProgress);
 
 						log.WriteLine($"{crawlSettings.Caption} size: " + sizeFormat.Format(rootsSize));
 						totalSize += rootsSize;
@@ -607,13 +617,13 @@ namespace UnityHeapCrawler
 #endif
 		}
 
-		private int CrawlRoots([NotNull] CrawlSettings crawlSettings, int crawlIndex, float startProgress, float endProgress)
+		private long CrawlRoots([NotNull] CrawlSettings crawlSettings, int crawlIndex, float startProgress, float endProgress)
 		{
 			if (rootsQueue.Count <= 0)
 				return 0;
 
 			int processedRoots = 0;
-			int totalSize = 0;
+			long totalSize = 0;
 			var roots = new List<CrawlItem>();
 			while (rootsQueue.Count > 0)
 			{
@@ -693,7 +703,7 @@ namespace UnityHeapCrawler
 				}
 			}
 
-			root.UpdateSize();
+			root.UpdateSize(SizeMode);
 		}
 
 		private void EnqueueRoot([NotNull] object root, [NotNull] string name, bool local)

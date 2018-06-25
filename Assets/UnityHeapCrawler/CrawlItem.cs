@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.Profiling;
 using Object = UnityEngine.Object;
 
 namespace UnityHeapCrawler
@@ -21,9 +22,9 @@ namespace UnityHeapCrawler
 		[NotNull]
 		public string Name;
 
-		public int SelfSize;
+		public long SelfSize;
 
-		public int TotalSize;
+		public long TotalSize;
 
 		[CanBeNull]
 		public List<CrawlItem> Children;
@@ -47,18 +48,23 @@ namespace UnityHeapCrawler
 			Children.Add(child);
 		}
 
-		public void UpdateSize()
+		public void UpdateSize(SizeMode mode)
 		{
 			try
 			{
-				SelfSize = CalculateSelfSize();
+				SelfSize = 0;
+				if (mode == SizeMode.Managed || mode == SizeMode.Total)
+					SelfSize += CalculateSelfManagedSize();
+				if (mode == SizeMode.Native || mode == SizeMode.Total)
+					SelfSize += CalculateSelfNativeSize();
+
 				TotalSize = SelfSize;
 				if (Children == null)
 					return;
 
 				foreach (var child in Children)
 				{
-					child.UpdateSize();
+					child.UpdateSize(mode);
 					TotalSize += child.TotalSize;
 				}
 				Children.Sort();
@@ -208,7 +214,15 @@ namespace UnityHeapCrawler
 			return string.Join(".", itemNames);
 		}
 
-		private int CalculateSelfSize()
+		private long CalculateSelfNativeSize()
+		{
+			var uo = Object as Object;
+			if (uo == null)
+				return 0L;
+			return Profiler.GetRuntimeMemorySizeLong(uo);
+		}
+
+		private long CalculateSelfManagedSize()
 		{
 			if (!SnapshotHistory.IsNew(Object))
 				return 0;
